@@ -3,8 +3,8 @@
 
   #action-toolbar
     .grid-row
-      .thirty
-        %input{ type: 'text', placeholder: 'Add a geofence', class: 'pseudo-input' }
-        %input{ type: 'text', placeholder: 'Add a password', class: 'pseudo-input' }
-      .seventy
+      .eighty
+        = f.text_field :location, placeholder: 'Add a geofence', class: 'pseudo-input'
+        = f.text_field :password, placeholder: 'Add a password', class: 'pseudo-input'
+      .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
