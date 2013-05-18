@@ -39,7 +39,7 @@ a
   &:hover
     text-decoration: underline 
   &:active
-    color: #3f8fa8 
+    color: lighten($base-color, 40%) 
   &.destroy
     color: #800 
 
@@ -58,6 +58,13 @@ header
     font-weight: bold
     font-size: 22px
     color: #fff
+
+    a
+      color: #fff
+      
+      &:hover
+        color: lighten($base-color, 45%) 
+        text-decoration: none
 
   h2
     float: right
@@ -90,3 +97,11 @@ header
   text-align: center
   font-size: 20px
   @include border-radius(2px)
+
+.message-link
+  background-color: #f2f2f2
+  border: 1px solid darken(#f2f2f2, 5%)
+  padding: 10px 15px
+  @include border-radius(2px)
+  font-size: 18px
+  text-align: center

@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :check_location, :check_password
+
   def new
     @message = Message.new
   end
@@ -24,5 +26,11 @@ class MessagesController < ApplicationController
                                       :password, 
                                       :latitude, 
                                       :longitude)
+    end
+
+    def check_location
+    end
+
+    def check_password
     end
 end

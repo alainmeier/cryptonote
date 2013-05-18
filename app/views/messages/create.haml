@@ -1,4 +1,8 @@
 Your note was successfully created. It can be accessed from:
 %br
 %br
-#{request.protocol}#{request.host_with_port}#{request.fullpath}/#{@message.id}
+.message-link
+  = link_to request.protocol + request.host_with_port + request.fullpath + '/' + @message.id, request.protocol + request.host_with_port + request.fullpath + '/' + @message.id, target: '_blank'
+%br
+%br
+= link_to '&laquo; Back to the homepage'.html_safe, root_path
