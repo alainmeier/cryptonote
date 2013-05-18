@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
-    redirect_to message_path(@message)
   end
 
   def show
