@@ -42,3 +42,33 @@ a
     color: #3f8fa8 
   &.destroy
     color: #800 
+
+.restrict-width
+  width: $page-width
+  margin: 0 auto
+
+header
+  background-color: $base-color
+  border-bottom: 3px solid darken($base-color, 5%)
+  padding: 10px 15px
+  margin-bottom: 20px
+
+  h1
+    float: left
+    font-weight: bold
+    font-size: 22px
+    color: #fff
+
+  h2
+    float: right
+    padding-top: 4px
+    font-size: 16px
+    color: lighten($base-color, 40%)
+
+#content
+  #message-body
+    p
+      font-size: 22px
+      text-align: justify
+      line-height: 1.5
+      padding-bottom: 20px
