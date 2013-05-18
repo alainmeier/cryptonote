@@ -1,5 +1,5 @@
 = form_for(@message) do |f|
-  = f.text_field :content, placeholder: "Enter your content", :autofocus => true
+  = f.text_area :content, placeholder: "Write your note...", :autofocus => true, class: 'content-input'
 
   #action-toolbar
     .grid-row

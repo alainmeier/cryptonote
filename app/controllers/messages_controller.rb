@@ -5,10 +5,12 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
-    redirect_to root_path
+    redirect_to message_path(@message)
   end
 
   def show
+    @message = Message.find(params[:id])
+    @message.delete
   end
 
   def destroy
