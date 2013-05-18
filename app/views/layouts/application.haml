@@ -14,6 +14,9 @@
           Send and receive single-view, encrypted messages. Huh?
 
     #content.restrict-width
+      #warning
+        This message has now been deleted, so don't refresh the page.
+
       #message-body
         %p
           This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
@@ -25,11 +28,11 @@
           Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
 
       #action-toolbar
-        #grid-row
+        .grid-row
           .thirty
             %input{ type: 'text', placeholder: 'Add a geofence' }
             %input{ type: 'text', placeholder: 'Add a password' }
           .seventy
-            Create message
+            .btn.btn-primary Create message
 
       = yield
