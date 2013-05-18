@@ -1,0 +1,78 @@
+@import 'variables'
+@import 'compass'
+
+.btn
+  display: inline-block
+  padding: 2px 10px
+  margin-bottom: 0
+  font-size: 16px
+  line-height: 20px
+  background-color: $base-color
+  color: #fff
+  text-align: center
+  font-family: $font-stack
+  font-weight: bold
+  vertical-align: middle
+  cursor: pointer
+  border: 0
+  border-radius: 2px
+  appearance: none
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -webkit-font-smoothing: antialiased
+  transition: opacity 0.1s linear
+
+  &:hover
+    opacity: 0.85
+    text-decoration: none
+    transition: opacity 0.1s linear
+
+.btn:focus
+  outline: thin dotted #333
+  outline: 5px auto -webkit-focus-ring-color
+  outline-offset: -2px
+
+.btn.active, .btn:active
+  opacity: 1
+  outline: 0
+  color: #fff
+
+.btn.disabled, .btn[disabled]
+  cursor: default
+  background-color: darken(#fff, 10%)
+  background-image: none
+  opacity: 0.65
+  box-shadow: none
+
+.btn-large
+  padding: 6px 14px
+  font-size: 20px
+  line-height: normal
+
+.btn-small
+  padding: 5px 9px
+  font-size: 14px
+  line-height: 18px
+
+.btn-mini
+  padding: 2px 6px
+  font-size: 14px
+  line-height: 16px
+
+.btn-warning
+  border-bottom: 1px solid darken(#ceae4b, 20%)
+  background-color: #ceae4b
+
+  &:hover
+    background-color: darken(#ceae4b, 7%)
+  &:active
+    background-color: darken(#ceae4b, 10%)
+
+.btn-primary
+  @include background(linear-gradient(top, lighten($base-color, 8%), $base-color))
+  border: 1px solid darken($base-color, 5%)
+  @include box-shadow(rgba(255,255,255,0.3) 0 1px inset)
+  @include text-shadow(darken($base-color, 10%) 0 -1px)
