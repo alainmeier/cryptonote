@@ -1,0 +1,166 @@
+/* ---------------------
+ * FIDDY.CSS
+ *
+ * A no-bullshit fluid grid system that makes as few assumptions
+ * as possible. It is perfect for nesting grids logically.
+ * Also it doesn't use arbitrary columns that are difficult
+ * to visualize - it uses percentages.
+ * It has no default padding so you can actually add borders
+ * to it without specifically targeting the div.
+
+ * GENERAL USAGE
+ * Wrap a .grid-row class around any rows you want, clearfix is
+ * already done for you. All padding increments of 5% exist
+
+ * PADDING
+ * If you want vertical padding on anything, just add a
+ * vertical-padding class to it
+ * If you want horizontal padding on anything, just add a
+ * horizontal-padding class to it
+ * If you want combination padding just do stuff like
+ * .padding-top-left or .padding-bottom-right
+
+ * OFFSETS
+ * Want to do an offset? Just do .offset.[offset-width]
+ * so for example, .offset.fifty creates an offset of 50%
+ * --------------------*/
+
+@import 'variables'
+@import 'compass'
+
+/* --- VARIABLES --- */
+
+$padding: 10px
+
+/* --- MIXINS --- */
+
+@mixin inline-clearfix
+  zoom: 1
+  &:before,
+  &:after
+    display: table
+    content: ""
+    zoom: 1
+  &:after
+    clear: both
+
+@mixin percent-width($width)
+  width: $width
+  float: left
+
+/* --- GENERAL CSS --- */
+
+.grid-row
+  width: 100%
+  position: relative
+  @include inline-clearfix
+
+  > div
+    @include inline-clearfix
+
+  // Combination padding
+  .padding
+    padding: $padding
+
+  .padding-vertical
+    padding: $padding 0
+
+  .padding-horizontal
+    padding: 0 $padding
+
+  .padding-top-left
+    padding: $padding 0 0 $padding
+
+  .padding-top-right
+    padding: $padding $padding 0 0
+
+  .padding-bottom-left
+    padding: 0 0 $padding $padding
+
+  .padding-bottom-right
+    padding: 0 $padding $padding 0
+
+  // Regular padding
+  .padding-left
+    padding: 0 0 0 $padding
+
+  .padding-right
+    padding: 0 $padding 0 0
+
+  .padding-top
+    padding: $padding 0 0 0
+
+  .padding-bottom
+    padding: 0 0 $padding 0
+
+  .all-padding
+    padding: $padding
+
+  // Offsets and divs
+  .offset
+    &:after
+      content: "."
+      visibility: hidden
+
+  .five
+    +percent-width(5%)
+
+  .ten
+    +percent-width(10%)
+
+  .fifteen
+    +percent-width(15%)
+
+  .twenty
+    +percent-width(20%)
+
+  .twenty-five
+    +percent-width(25%)
+
+  .thirty
+    +percent-width(30%)
+
+  .thirty-three
+    +percent-width(33.33%)
+
+  .thirty-five
+    +percent-width(35%)
+
+  .fourty
+    +percent-width(40%)
+
+  .fourty-five
+    +percent-width(45%)
+
+  .fifty
+    +percent-width(50%)
+
+  .fifty-five
+    +percent-width(55%)
+
+  .sixty
+    +percent-width(60%)
+
+  .sixty-five
+    +percent-width(65%)
+
+  .seventy
+    +percent-width(70%)
+
+  .seventy-five
+    +percent-width(75%)
+
+  .eighty
+    +percent-width(80%)
+
+  .eighty-five
+    +percent-width(85%)
+
+  .ninety
+    +percent-width(90%)
+
+  .ninety-five
+    +percent-width(95%)
+
+  .one-hundred
+    +percent-width(100%)

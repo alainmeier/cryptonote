@@ -11,3 +11,34 @@
  *= require_self
  *= require_tree .
  */
+
+@import 'variables'
+@import 'compass'
+
+@include global-reset
+
+*
+  @include box-sizing(border-box)
+
+.clearfix
+  +clearfix
+
+html
+  -webkit-font-smoothing: antialiased 
+  font-family: $font-stack 
+  height: 100% 
+
+body
+  height: 100%
+  color: $gray
+
+a
+  color: $base-color
+  text-decoration: none 
+  cursor: pointer 
+  &:hover
+    text-decoration: underline 
+  &:active
+    color: #3f8fa8 
+  &.destroy
+    color: #800 

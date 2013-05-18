@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title CryptoNote
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Cabin", :rel => "stylesheet", :type => "text/css"}
+    = csrf_meta_tags
+  %body
+    %header
+      %h1 CryptoNote
+      %h2
+        Send and receive single-view, encrypted messages. Huh?
+
+    #content
+      = yield
