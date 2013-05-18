@@ -63,8 +63,9 @@ input[type="color"],
     @include transition(all 0.1s linear)
 
 .pseudo-input
-  margin: 0 !important
-  padding: 6px 12px !important
+  margin: 0 5px 0 0!important
+  padding: 6px 12px 6px 28px !important
+  background: image-url('global-sprite.png') no-repeat
 
   &:focus
     color: $base-color
@@ -80,6 +81,11 @@ input[type="color"],
 
   &:-ms-input-placeholder
     color: $gray
+
+.geofence
+  background-position: 6px -20px
+.password
+  background-position: 6px -48px
 
 .field_with_errors
   input
