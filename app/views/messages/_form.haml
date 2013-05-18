@@ -1,0 +1,10 @@
+= form_for(@message) do |f|
+  = f.text_field :content, placeholder: "Enter your content", :autofocus => true
+
+  #action-toolbar
+    .grid-row
+      .thirty
+        %input{ type: 'text', placeholder: 'Add a geofence' }
+        %input{ type: 'text', placeholder: 'Add a password' }
+      .seventy
+        = f.submit 'Create message', class: 'btn btn-primary'
