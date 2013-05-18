@@ -5,7 +5,7 @@ Cryptonote::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'messages#new'
 
-  resources :messages
+  resources :messages, only: [:show, :create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
