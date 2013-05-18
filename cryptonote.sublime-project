@@ -1,0 +1,39 @@
+{
+    "settings":
+    {
+        "trim_automatic_white_space": true,
+        "translate_tabs_to_spaces": true,
+        "tab_size": 2
+    },
+
+    "folders":
+    [
+        {
+            "path": "./"
+        },
+        {
+            "path": "app/assets"
+        },
+        {
+            "path": "app/models"
+        },
+        {
+            "path": "app/controllers"
+        },
+        {
+            "path": "app/views"
+        },
+        {
+            "path": "app/helpers"
+        },
+        {
+            "path": "db/migrate"
+        },
+	{
+            "path": "spec"
+        },
+	{
+            "path": "lib"
+        }
+    ]
+}
