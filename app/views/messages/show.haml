@@ -3,3 +3,7 @@
 
 #message-body
   = simple_format(@message.content)
+
+%br
+
+= link_to '&laquo; Write a new message'.html_safe, root_path, class: 'btn btn-primary'

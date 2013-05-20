@@ -23,12 +23,12 @@
   -moz-user-select: none
   -ms-user-select: none
   -webkit-font-smoothing: antialiased
-  transition: opacity 0.1s linear
+  @include transition(background-color 0.1s linear)
 
   &:hover
-    opacity: 0.85
+    background-color: lighten($base-color, 10%)
+    @include transition(background-color 0.1s linear)
     text-decoration: none
-    transition: opacity 0.1s linear
 
 .btn:focus
   outline: thin dotted #333
