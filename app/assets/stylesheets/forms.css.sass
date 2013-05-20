@@ -52,7 +52,7 @@ input[type="color"],
   font-size: 16px 
   vertical-align: middle 
   background-color: #fff 
-  @include transition(all 0.1s linear)
+  resize: none
 
   &:focus
     outline: 0 
@@ -60,7 +60,6 @@ input[type="color"],
     /* IE6-9 */
 
     border: 2px solid $base-color
-    @include transition(all 0.1s linear)
 
 .pseudo-input
   margin: 0 5px 0 0!important
@@ -94,13 +93,11 @@ input[type="color"],
     &:focus
       border: 1px solid #b33d3d
       border-left: 5px solid #b33d3d
-      @include transition(all 0.1s linear)
 
 .content-input
   border: 0 !important
   background-color: transparent
   font-size: 22px
   width: 100%
-  min-height: 200px
   line-height: 1.5
   padding: 0
