@@ -1,22 +1,18 @@
-== CryptoNote
+CryptoNote
+==========
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CryptoNote is a very simple open source web application that lets users encrypt and share arbitrary messages.
 
-Things you may want to cover:
+### Ruby version
+CryptoNote requires ruby version 2.0.0 or higher.
 
-* Ruby version
+### System dependencies
+You will have to install Postgres locally in order to run this. Unfortunately, the Heroku Postgres App is currently not supported as it does not have support for the `uuid-ossp` extension required to generate UUIDs.
 
-* System dependencies
+### Configuration
 
-* Configuration
+### Database creation
 
-* Database creation
+### Database initialization
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+### Deployment instructions
