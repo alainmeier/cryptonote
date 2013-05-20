@@ -10,8 +10,15 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
-    @message.delete
+    @latitude = request.location.latitude
+    @longitude = request.location.longitude
+
+    if @latitude && @longitude
+      @message = Message.find(params[:id])
+      @message.delete
+    else
+      redirect_to :root_path, notice: 'You are not in the right location.'
+    end
   end
 
   def destroy

@@ -14,4 +14,7 @@
 
 class Message < ActiveRecord::Base
   validates :content, presence: true
+
+  geocoded_by :location
+  after_validation :geocode
 end
