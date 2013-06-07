@@ -39,7 +39,7 @@ a
   &:hover
     text-decoration: underline 
   &:active
-    color: lighten($base-color, 40%) 
+    color: lighten($base-color, 10%) 
   &.destroy
     color: #800 
 
@@ -52,7 +52,7 @@ header
   border-bottom: 3px solid darken($base-color, 7%)
   padding: 13px 0
   margin-bottom: 40px
-  @include text-shadow(darken($base-color, 8%) 0 -2px)
+  @include text-shadow(darken($base-color, 8%) 0 2px)
   
   .logo
     width: 16px
@@ -96,7 +96,7 @@ header
   margin-bottom: 30px
 
 #action-toolbar
-  padding: 10px 15px
+  padding: 10px 11px
   margin-bottom: 20px
   width: $page-width
   background-color: #f2f2f2
@@ -135,7 +135,7 @@ header
 
 .optional-message
   color: #adadad
-  padding-top: 10px
+  padding-bottom: 20px
 
 .pull-right
   float: right

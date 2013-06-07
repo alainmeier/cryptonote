@@ -6,13 +6,13 @@
       .eighty
         = f.text_field :location, placeholder: 'Add a geofence', class: 'pseudo-input geofence'
         = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password'
-        
-        .optional-message
-          These fields are optional. 
-          %a{ id: 'advanced-fields-link' } Show advanced fields
 
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
+
+  .optional-message
+    These fields are optional. 
+    %a{ id: 'advanced-fields-link' } Show advanced fields
 
   #advanced-fields.clearfix
     .field.pull-left
