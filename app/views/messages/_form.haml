@@ -1,12 +1,5 @@
 = form_for(@message) do |f|
-  = f.text_area :content, placeholder: "Write your note...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
-
-  = f.text_field :salt, id: 'encryption-salt'
-  = f.text_field :encryption_key, id: 'encryption-key'
-
-  = f.text_field :gen_password, id: 'encryption-password'
-
-  = f.text_field :content, id: 'encrypted-message'
+  = f.text_area :pre_encryption, placeholder: "Write your note...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
 
   #action-toolbar
     .grid-row
@@ -15,3 +8,20 @@
         = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password'
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
+
+  = f.label :salt
+  = f.text_field :salt, id: 'encryption-salt'
+
+  %br
+
+  = f.label :encryption_key
+  = f.text_field :encryption_key, id: 'encryption-key'
+
+  %br
+
+  = f.label :gen_password, "Generated password"
+  = f.text_field :gen_password, id: 'encryption-password'
+
+  %br
+  = f.label :content, "Encrypted message"
+  = f.text_field :content, id: 'encrypted-message'

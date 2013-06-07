@@ -41,13 +41,10 @@ $(document).ready(function(){
 
   unencryptedField.keyup(function() {
     var encryptedHash = jQuery.parseJSON(sjcl.encrypt(password, unencryptedField.val()));
-    var encryptedText = encryptedHash['ct'];
-    var encryptionKey = encryptedHash['iv'];
-    var encryptionSalt = encryptedHash['salt'];
 
-    encryptionKeyField.val(encryptionKey);
-    encryptionSaltField.val(encryptionSalt);
-    encryptedField.val(encryptedText);
+    encryptionKeyField.val(encryptedHash['iv']);
+    encryptionSaltField.val(encryptedHash['salt']);
+    encryptedField.val(encryptedHash['ct']);
     encryptionPasswordField.val(password);
   });
 });

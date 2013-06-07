@@ -20,5 +20,5 @@ class Message < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode
 
-  attr_accessor :gen_password
+  attr_accessor :gen_password, :pre_encryption
 end
