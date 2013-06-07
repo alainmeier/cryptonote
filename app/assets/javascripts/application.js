@@ -29,6 +29,11 @@ function getURLParameter(name) {
 
 $(document).ready(function(){
   $('#unencrypted-message').autosize();
+
+  $('#advanced-fields-link').click(function() {
+    $('#advanced-fields').slideToggle();
+    return false;
+  });
 });
 
 $(document).ready(function(){
@@ -50,11 +55,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  encryptedTextArea = $('#encrypted-message-body p');
-  encryptedText = encryptedTextArea.text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  password = getURLParameter("gen_password");
+  var encryptedTextArea = $('#encrypted-message-body p');
+  var encryptedText = encryptedTextArea.text();
+  var encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+  var encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+  var password = getURLParameter("gen_password");
 
   encryptedRebuilt = JSON.stringify({
     'iv' : encryptionKey,

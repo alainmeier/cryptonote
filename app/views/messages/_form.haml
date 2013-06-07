@@ -9,22 +9,25 @@
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
 
-  .field
-    = f.label :salt
-    %br
-    = f.text_field :salt, id: 'encryption-salt'
+  %a{ id: 'advanced-fields-link' } Show advanced fields
 
-  .field
-    = f.label :encryption_key
-    %br
-    = f.text_field :encryption_key, id: 'encryption-key'
+  #advanced-fields
+    .field
+      = f.label :salt
+      %br
+      = f.text_field :salt, id: 'encryption-salt'
 
-  .field
-    = f.label :gen_password, "Generated password"
-    %br
-    = f.text_field :gen_password, id: 'encryption-password'
+    .field
+      = f.label :encryption_key
+      %br
+      = f.text_field :encryption_key, id: 'encryption-key'
 
-  .field
-    = f.label :content, "Encrypted message"
-    %br
-    = f.text_field :content, id: 'encrypted-message'
+    .field
+      = f.label :gen_password, "Generated password"
+      %br
+      = f.text_field :gen_password, id: 'encryption-password'
+
+    .field
+      = f.label :content, "Encrypted message"
+      %br
+      = f.text_field :content, id: 'encrypted-message'
