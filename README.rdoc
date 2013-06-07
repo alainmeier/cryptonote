@@ -1,5 +1,5 @@
-= CryptoNote - Encrypted, single-view messages
-CryptoNote is a very simple open source web application that lets users encrypt and share arbitrary messages. If you'd like to see an example of the site running, go to https://cryptocat.org
+= CryptoNote
+CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptocat.org
 
 * All data is encrypted client side so that the server never sees what's on it.
 * Messages are deleted from the server once the recipient has viewed it.
@@ -46,6 +46,16 @@ And then run:
     heroku open
     
 In order to open the application.
+
+== Contributing
+
+I'm always open to pull requests, and there's a lot more that could be done with the site. In general, I will tend towards "track less", so I never want CryptoNote to have user accounts or anything like that. However, there are always cool things that can be done.
+
+=== Ideas for the future
+
+* Limit viewing by http referrer. For example, only people who clicked the link on Facebook or Twitter can view the message
+* Time-based expiry. Make messages automatically die after x period of time.
+* Javascript submission so we can carry over the password variable client-side instead of sending it to the server.
 
 == Special Thanks
 
