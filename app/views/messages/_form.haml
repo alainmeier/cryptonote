@@ -9,19 +9,22 @@
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
 
-  = f.label :salt
-  = f.text_field :salt, id: 'encryption-salt'
+  .field
+    = f.label :salt
+    %br
+    = f.text_field :salt, id: 'encryption-salt'
 
-  %br
+  .field
+    = f.label :encryption_key
+    %br
+    = f.text_field :encryption_key, id: 'encryption-key'
 
-  = f.label :encryption_key
-  = f.text_field :encryption_key, id: 'encryption-key'
+  .field
+    = f.label :gen_password, "Generated password"
+    %br
+    = f.text_field :gen_password, id: 'encryption-password'
 
-  %br
-
-  = f.label :gen_password, "Generated password"
-  = f.text_field :gen_password, id: 'encryption-password'
-
-  %br
-  = f.label :content, "Encrypted message"
-  = f.text_field :content, id: 'encrypted-message'
+  .field
+    = f.label :content, "Encrypted message"
+    %br
+    = f.text_field :content, id: 'encrypted-message'
