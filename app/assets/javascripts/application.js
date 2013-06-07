@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.autosize
+//= require sjcl
 //= require_tree .
 
 $(document).ready(function(){
