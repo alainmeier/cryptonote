@@ -3,7 +3,8 @@
 
 #message-body
   #encrypted-message-body
-    = simple_format(@message.content)
+    %pre
+      #{@message.content}
 
 %br
 
