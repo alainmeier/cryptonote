@@ -86,6 +86,8 @@ GEM
     multi_json (1.7.3)
     pg (0.15.1)
     polyglot (0.3.3)
+    puma (2.0.1)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -149,6 +151,7 @@ DEPENDENCIES
   haml
   jquery-rails
   pg
+  puma
   quiet_assets
   rails (= 4.0.0.rc1)
   rails3_serve_static_assets!

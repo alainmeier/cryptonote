@@ -11,6 +11,12 @@ group :development do
   gem 'quiet_assets'
 end
 
+group :production do
+  # Required for Heroku asset serving
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
+
 # For geocoding and reverse geocoding
 gem 'geocoder'
 
@@ -18,6 +24,8 @@ gem 'geocoder'
 gem 'figaro'
 
 gem 'pg'
+
+gem 'puma'
 
 gem 'haml'
 
@@ -39,7 +47,3 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-# Required for Heroku asset serving
-gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
