@@ -92,9 +92,18 @@ header
       padding-bottom: 20px
       word-wrap: break-word
 
+#unencrypted-message
+  margin-bottom: 30px
+
 #action-toolbar
-  padding: 20px 0 40px 0
+  padding: 10px 15px
+  margin-bottom: 20px
   width: $page-width
+  background-color: #f2f2f2
+  @include border-radius(3px)
+  border: 1px solid darken(#f2f2f2, 5%)
+  @include box-shadow(rgba(255,255,255,0.8) 0 1px inset)
+  @include text-shadow(#fff 0 1px)
 
 #warning
   width: 100%
@@ -124,9 +133,9 @@ header
 #key, #salt, #advanced-fields
   display: none
 
-#advanced-fields-link
-  padding-bottom: 20px
-  display: block
+.optional-message
+  color: #adadad
+  padding-top: 10px
 
 .pull-right
   float: right

@@ -6,28 +6,31 @@
       .eighty
         = f.text_field :location, placeholder: 'Add a geofence', class: 'pseudo-input geofence'
         = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password'
+        
+        .optional-message
+          These fields are optional. 
+          %a{ id: 'advanced-fields-link' } Show advanced fields
+
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
 
-  %a{ id: 'advanced-fields-link' } Show advanced fields
-
-  #advanced-fields
-    .field
+  #advanced-fields.clearfix
+    .field.pull-left
       = f.label :salt
       %br
       = f.text_field :salt, id: 'encryption-salt'
 
-    .field
+    .field.pull-left
       = f.label :encryption_key
       %br
       = f.text_field :encryption_key, id: 'encryption-key'
 
-    .field
+    .field.pull-left
       = f.label :gen_password, "Generated password"
       %br
       = f.text_field :gen_password, id: 'encryption-password'
 
-    .field
+    .field.pull-left
       = f.label :content, "Encrypted message"
       %br
-      = f.text_field :content, id: 'encrypted-message'
+      = f.text_area :content, id: 'encrypted-message'

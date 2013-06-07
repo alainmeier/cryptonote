@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 
     if @latitude && @longitude
       @message = Message.find(params[:id])
-      #@message.delete
+      @message.delete
     else
       redirect_to :root_path, notice: 'You are not in the right location.'
     end
