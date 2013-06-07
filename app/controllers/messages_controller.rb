@@ -19,14 +19,19 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find(params[:id])
     @latitude = request.location.latitude
     @longitude = request.location.longitude
 
-    if @latitude && @longitude
-      @message = Message.find(params[:id])
+    if !@message.location.nil?
+       distance = Geocoder::Calculations.distance_between([@latitude,@longitude], [@message.latitude,@message.longitude])
+       if distance > 20
+        redirect_to root_path, notice: 'You are not in the right location.'
+      else
+        @message.delete
+      end
+    elsif @message.location.nil?
       @message.delete
-    else
-      redirect_to :root_path, notice: 'You are not in the right location.'
     end
   end
 

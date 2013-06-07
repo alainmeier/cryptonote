@@ -1,10 +1,14 @@
 = form_for(@message) do |f|
+  - @message.errors.full_messages.each do |msg|
+    %p
+      = msg
+
   = f.text_area :pre_encryption, placeholder: "The quick brown fox jumped over the...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
 
   #action-toolbar
     .grid-row
       .eighty
-        = f.text_field :location, placeholder: 'Add a geo-fence', class: 'pseudo-input geofence', 'data-toggle' => 'tooltip', title: 'COMING SOON. Geofences will restrict the ability to open the message to a certain geographic radius (20km) Ex. San Diego, CA'
+        = f.text_field :location, placeholder: 'Add a geo-fence', class: 'pseudo-input geofence', 'data-toggle' => 'tooltip', title: 'Warning: Very sensitive! Geofences will restrict the ability to open the message to a certain geographic radius (20km) Example input: San Diego, CA'
         = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password', 'data-toggle' => 'tooltip', title: 'COMING SOON. The recipient will need to enter a password to view the message. WARNING: This is stored in plain text for now!'
 
       .twenty
