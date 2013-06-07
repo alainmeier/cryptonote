@@ -1,0 +1,36 @@
+= CryptoNote
+CryptoNote is a very simple open source web application that lets users encrypt and share arbitrary messages.
+
+== Motivation
+
+Sometimes you need to send something to somebody and be sure that they're the only person reading the message.
+
+=== System dependencies
+
+- Ruby 2.0.0 or higher
+- Rails 4.0.0 or higher
+- Postgres 9.2.4 or greater
+- Heroku Toolbelt
+
+=== Configuration
+
+Ensure that you have Postgres installed, preferrably through the {Heroku Postgres App}[http://postgresapp.com] as we use it in both production and development.
+
+Then, open your terminal to the project folder and run:
+
+    rake db:setup
+    rake db:migrate
+
+=== Deployment instructions
+
+Run the following commands to get started:
+
+    heroku create
+    git push heroku master
+    heroku run rake db:migrate
+    
+And then run:
+
+    heroku open
+    
+In order to open the application.
