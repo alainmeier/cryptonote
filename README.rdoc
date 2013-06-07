@@ -57,6 +57,10 @@ I'm always open to pull requests, and there's a lot more that could be done with
 * Time-based expiry. Make messages automatically die after x period of time.
 * Javascript submission so we can carry over the password variable client-side instead of sending it to the server.
 
+== License
+
+CryptoNote is released under the terms of the MIT license. See LICENCE for more information or see http://opensource.org/licenses/MIT.
+
 == Special Thanks
 
 For the client-side encryption, all of the heavy lifting is done by the {Stanford Javascript Crypto Library}[https://crypto.stanford.edu/sjcl/]. Part of the reason I make this project was to help spread the word about the simple, but extremely well made library that anybody can use. Thanks to the team who made it!
