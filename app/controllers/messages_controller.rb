@@ -10,7 +10,11 @@ class MessagesController < ApplicationController
 
     @message = Message.create(message_params)
 
-    @built_url = request.protocol + request.host_with_port + request.fullpath + '/' + @message.id + '?gen_password=' + @gen_password
+    if @message.valid?
+      @built_url = request.protocol + request.host_with_port + request.fullpath + '/' + @message.id + '?gen_password=' + @gen_password
+    else
+      redirect_to root_path
+    end
   end
 
   def show
