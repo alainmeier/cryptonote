@@ -56,6 +56,7 @@ I'm always open to pull requests, and there's a lot more that could be done with
 * Limit viewing by http referrer. For example, only people who clicked the link on Facebook or Twitter can view the message
 * Time-based expiry. Make messages automatically die after x period of time.
 * Javascript submission so we can carry over the password variable client-side instead of sending it to the server.
+* The application.js file has some horrendously bad javascript that I may or may not rewrite soon depending on time. Don't hate the player, hate the time constraint. 
 
 == License
 
