@@ -1,9 +1,21 @@
-= CryptoNote
-CryptoNote is a very simple open source web application that lets users encrypt and share arbitrary messages.
+= CryptoNote - Encrypted, single-view messages
+CryptoNote is a very simple open source web application that lets users encrypt and share arbitrary messages. If you'd like to see an example of the site running, go to https://cryptocat.org
+
+* All data is encrypted client side so that the server never sees what's on it.
+* Messages are deleted from the server once the recipient has viewed it.
+* Messages can be optionally geofenced so they can only be opened while located within the fence.
+* Messages can be password protected.
 
 == Motivation
 
-Sometimes you need to send something to somebody and be sure that they're the only person reading the message.
+Sometimes you need to send something to somebody and be sure that they're the only person reading the message. So I decided to make a simple, open source, encrypted messaging system that anybody can pull and deploy to Heroku in minutes. Don't trust me? That's cool, install your own. Don't trust your web host? That's cool, they'll never be able to read your messages.
+
+== Known Weaknesses
+
+* The generated encryption password is currently being sent to the server (but isn't stored), so SSL is required for each install to ensure nobody reads your message. In the future I will remove this limitation.
+* Probably other things I haven't thought of / found yet. Always looking for help!
+
+== Getting Started
 
 === System dependencies
 
@@ -34,3 +46,7 @@ And then run:
     heroku open
     
 In order to open the application.
+
+== Special Thanks
+
+For the client-side encryption, all of the heavy lifting is done by the {Stanford Javascript Crypto Library}[https://crypto.stanford.edu/sjcl/]. Part of the reason I make this project was to help spread the word about the simple, but extremely well made library that anybody can use. Thanks to the team who made it!
