@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130518052805) do
+ActiveRecord::Schema.define(version: 20130607045426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
   create_table "messages", id: false, force: true do |t|
-    t.uuid     "id",         null: false
+    t.uuid     "id",             null: false
     t.text     "content"
     t.string   "location"
     t.string   "password"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20130518052805) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "encryption_key"
+    t.string   "salt"
   end
 
 end

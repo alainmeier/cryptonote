@@ -2,14 +2,16 @@
 #
 # Table name: messages
 #
-#  id         :integer          not null, primary key
-#  content    :text
-#  location   :string(255)
-#  password   :string(255)
-#  latitude   :float
-#  longitude  :float
-#  created_at :datetime
-#  updated_at :datetime
+#  id             :uuid             not null, primary key
+#  content        :text
+#  location       :string(255)
+#  password       :string(255)
+#  latitude       :float
+#  longitude      :float
+#  created_at     :datetime
+#  updated_at     :datetime
+#  encryption_key :string(255)
+#  salt           :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

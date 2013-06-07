@@ -2,14 +2,16 @@
 #
 # Table name: messages
 #
-#  id         :integer          not null, primary key
-#  content    :text
-#  location   :string(255)
-#  password   :string(255)
-#  latitude   :float
-#  longitude  :float
-#  created_at :datetime
-#  updated_at :datetime
+#  id             :uuid             not null, primary key
+#  content        :text
+#  location       :string(255)
+#  password       :string(255)
+#  latitude       :float
+#  longitude      :float
+#  created_at     :datetime
+#  updated_at     :datetime
+#  encryption_key :string(255)
+#  salt           :string(255)
 #
 
 class Message < ActiveRecord::Base
@@ -17,4 +19,6 @@ class Message < ActiveRecord::Base
 
   geocoded_by :location
   after_validation :geocode
+
+  attr_accessor :gen_password
 end

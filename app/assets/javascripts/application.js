@@ -12,11 +12,67 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.autosize
 //= require sjcl
 //= require_tree .
 
+function randomString(length) {
+  var result = '';
+  var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+  return result;
+}
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
+
 $(document).ready(function(){
-    $('textarea').autosize();   
+  $('#unencrypted-message').autosize();
+});
+
+$(document).ready(function(){
+  var unencryptedField = $('#unencrypted-message');
+  var encryptedField = $('#encrypted-message');
+  var encryptionKeyField = $('#encryption-key');
+  var encryptionSaltField = $('#encryption-salt');
+  var encryptionPasswordField = $('#encryption-password');
+  var password = randomString(32);
+
+  unencryptedField.keyup(function() {
+    var encryptedHash = jQuery.parseJSON(sjcl.encrypt(password, unencryptedField.val()));
+    var encryptedText = encryptedHash['ct'];
+    var encryptionKey = encryptedHash['iv'];
+    var encryptionSalt = encryptedHash['salt'];
+
+    encryptionKeyField.val(encryptionKey);
+    encryptionSaltField.val(encryptionSalt);
+    encryptedField.val(encryptedText);
+    encryptionPasswordField.val(password);
+  });
+});
+
+$(document).ready(function(){
+  encryptedTextArea = $('#encrypted-message-body p');
+  encryptedText = encryptedTextArea.text().replace(/(\r\n|\n|\r|\s)/gm,"");
+  encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+  encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+  password = getURLParameter("gen_password");
+
+  encryptedRebuilt = JSON.stringify({
+    'iv' : encryptionKey,
+    'v' : "1",
+    'iter' : 1000,
+    'ks' : 128,
+    'ts' : 64,
+    'mode' : "ccm",
+    'adata' : "",
+    'cipher' : "aes",
+    'salt' : encryptionSalt,
+    'ct' : encryptedText
+  });
+
+  // Show decrypted message
+  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
+  encryptedTextArea.text(decryptedMessage);
 });

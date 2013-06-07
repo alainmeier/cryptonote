@@ -1,5 +1,12 @@
 = form_for(@message) do |f|
-  = f.text_area :content, placeholder: "Write your note...", :autofocus => true, class: 'content-input'
+  = f.text_area :content, placeholder: "Write your note...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
+
+  = f.text_field :salt, id: 'encryption-salt'
+  = f.text_field :encryption_key, id: 'encryption-key'
+
+  = f.text_field :gen_password, id: 'encryption-password'
+
+  = f.text_field :content, id: 'encrypted-message'
 
   #action-toolbar
     .grid-row

@@ -2,8 +2,15 @@
   This message has now been deleted, so don't refresh the page.
 
 #message-body
-  = simple_format(@message.content)
+  #encrypted-message-body
+    = simple_format(@message.content)
 
 %br
+
+#key
+  #{@message.encryption_key}
+
+#salt
+  #{@message.salt}
 
 = link_to '&laquo; Write a new message'.html_safe, root_path, class: 'btn btn-primary'

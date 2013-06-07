@@ -6,7 +6,11 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @gen_password = params[:message][:gen_password]
+
     @message = Message.create(message_params)
+
+    @built_url = request.protocol + request.host_with_port + request.fullpath + '/' + @message.id + '?gen_password=' + @gen_password
   end
 
   def show
@@ -15,7 +19,7 @@ class MessagesController < ApplicationController
 
     if @latitude && @longitude
       @message = Message.find(params[:id])
-      @message.delete
+      #@message.delete
     else
       redirect_to :root_path, notice: 'You are not in the right location.'
     end
@@ -32,7 +36,9 @@ class MessagesController < ApplicationController
                                       :location, 
                                       :password, 
                                       :latitude, 
-                                      :longitude)
+                                      :longitude,
+                                      :encryption_key,
+                                      :salt)
     end
 
     def check_location

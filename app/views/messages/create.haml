@@ -2,7 +2,8 @@
   Your note was successfully created. Remember not to visit the above URL as it will delete it. It can be accessed from:
 
 .message-link
-  = link_to request.protocol + request.host_with_port + request.fullpath + '/' + @message.id, request.protocol + request.host_with_port + request.fullpath + '/' + @message.id, target: '_blank'
+  - 
+  = link_to @built_url, @built_url, target: '_blank'
 %br
 %br
 = link_to '&laquo; Back to the homepage'.html_safe, root_path, class: 'btn btn-primary'
