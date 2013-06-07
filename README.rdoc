@@ -1,4 +1,7 @@
 = CryptoNote
+
+http://i.imgur.com/AqwnnXG.png
+
 CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.org
 
 * All data is encrypted client side so that the server never sees what's on it.
