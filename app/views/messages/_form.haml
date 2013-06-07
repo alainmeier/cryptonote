@@ -1,10 +1,6 @@
 = text_area :pre_encryption, :message, placeholder: "The quick brown fox jumped over the...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
 
 = form_for(@message) do |f|
-  - @message.errors.full_messages.each do |msg|
-    %p
-      = msg
-
   #action-toolbar
     .grid-row
       .eighty

@@ -136,6 +136,21 @@ header
   &:hover
     background-color: darken(#f2f2f2, 3%)
 
+.warning-message
+  width: 100%
+  background-color: #ffefef
+  border: 1px solid darken(#ffefef, 5%)
+  padding: 10px 15px
+  @include border-radius(2px)
+  margin-bottom: 20px
+  @include box-shadow(rgba(255,255,255,0.8) 0 1px inset)
+  color: darken(#ffefef, 70%)
+  text-align: center
+
+  a
+    color: darken(#ffefef, 60%)
+    border-bottom: 2px solid darken(#ffefef, 7%)
+
 .success-notice, .warning-create
   font-size: 19px
   padding-bottom: 20px
