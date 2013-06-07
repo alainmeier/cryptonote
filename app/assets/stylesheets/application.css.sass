@@ -48,10 +48,11 @@ a
   margin: 0 auto
 
 header
-  background-color: $base-color
+  @include background(linear-gradient(top, lighten($base-color, 4%), $base-color) no-repeat $base-color)
   border-bottom: 3px solid darken($base-color, 7%)
   padding: 13px 0
   margin-bottom: 40px
+  @include text-shadow(darken($base-color, 8%) 0 -2px)
   
   .logo
     width: 16px
