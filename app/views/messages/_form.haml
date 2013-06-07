@@ -1,20 +1,23 @@
 = form_for(@message) do |f|
-  = f.text_area :pre_encryption, placeholder: "Write your note...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
+  = f.text_area :pre_encryption, placeholder: "The quick brown fox jumped over the...", :autofocus => true, class: 'content-input', id: 'unencrypted-message'
 
   #action-toolbar
     .grid-row
       .eighty
-        = f.text_field :location, placeholder: 'Add a geofence', class: 'pseudo-input geofence'
-        = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password'
+        = f.text_field :location, placeholder: 'Add a geo-fence', class: 'pseudo-input geofence', 'data-toggle' => 'tooltip', title: 'COMING SOON. Geofences will restrict the ability to open the message to a certain geographic radius (20km) Ex. San Diego, CA'
+        = f.password_field :password, placeholder: 'Add a password', class: 'pseudo-input password', 'data-toggle' => 'tooltip', title: 'COMING SOON. The recipient will need to enter a password to view the message. WARNING: This is stored in plain text for now!'
 
       .twenty
         = f.submit 'Create message', class: 'btn btn-primary'
 
   .optional-message
-    These fields are optional. 
+    The above fields are optional. 
     %a{ id: 'advanced-fields-link' } Show advanced fields
 
   #advanced-fields.clearfix
+    .optional-message
+      WARNING: You should only be changing these values if you know what you're doing.
+
     .field.pull-left
       = f.label :salt
       %br
@@ -30,7 +33,9 @@
       %br
       = f.text_field :gen_password, id: 'encryption-password'
 
-    .field.pull-left
-      = f.label :content, "Encrypted message"
+    %br
+
+    .field.pull-left{ style: 'width: 100%' }
+      = f.label :content, "Encrypted message output"
       %br
-      = f.text_area :content, id: 'encrypted-message'
+      = f.text_area :content, id: 'encrypted-message', class: 'content-input'

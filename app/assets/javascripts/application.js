@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.autosize
 //= require sjcl
+//= require tooltip
 //= require_tree .
 
 function randomString(length) {
@@ -33,6 +34,16 @@ $(document).ready(function(){
   $('#advanced-fields-link').click(function() {
     $('#advanced-fields').slideToggle();
     return false;
+  });
+
+  $('#message_location').tooltip({
+    placement: "bottom",
+    trigger: "focus"
+  });
+
+  $('#message_password').tooltip({
+    placement: "bottom",
+    trigger: "focus"
   });
 });
 
@@ -75,6 +86,6 @@ $(document).ready(function(){
   });
 
   // Show decrypted message
-  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
-  encryptedTextArea.text(decryptedMessage);
+  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt).replace(/\n/g, '<br />');;
+  encryptedTextArea.html(decryptedMessage);
 });
