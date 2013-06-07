@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
 
     if @message.valid?
       @built_url = request.protocol + request.host_with_port + request.fullpath + '/' + @message.id + '?gen_password=' + @gen_password
+      @built_url_crawl = request.protocol + request.host_with_port + request.fullpath + '/ ' + @message.id + '?gen_password=' + @gen_password
     else
       redirect_to root_path
     end

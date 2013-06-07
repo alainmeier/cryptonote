@@ -28,6 +28,20 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 }
 
+function select_all(el) {
+  if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } else if (typeof document.selection != "undefined" && typeof document.body.createTextRange != "undefined") {
+    var textRange = document.body.createTextRange();
+    textRange.moveToElementText(el);
+    textRange.select();
+  }
+}
+
 $(document).ready(function(){
   $('#unencrypted-message').autosize();
 
@@ -44,6 +58,11 @@ $(document).ready(function(){
   $('#message_password').tooltip({
     placement: "bottom",
     trigger: "focus"
+  });
+
+  $('.message-link').tooltip({
+    placement: "bottom",
+    trigger: "hover"
   });
 });
 
@@ -86,6 +105,6 @@ $(document).ready(function(){
   });
 
   // Show decrypted message
-  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt).replace(/\n/g, '<br />');;
+  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
   encryptedTextArea.html(decryptedMessage);
 });

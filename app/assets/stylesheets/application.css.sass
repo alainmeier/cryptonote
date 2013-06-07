@@ -32,6 +32,12 @@ body
   height: 100%
   color: $gray
 
+::selection
+  background: lighten($base-color, 40%)
+
+::-moz-selection
+  background: lighten($base-color, 40%)
+
 a
   color: $base-color
   text-decoration: none 
@@ -124,11 +130,21 @@ header
   display: block
   text-align: center
   line-height: 1.4
+  cursor: pointer
+  @include transition(0.1s linear background-color)
 
-.success-notice
+  &:hover
+    background-color: darken(#f2f2f2, 3%)
+
+.success-notice, .warning-create
   font-size: 19px
   padding-bottom: 20px
   line-height: 1.4
+
+.create-header
+  font-weight: bold
+  font-size: 23px
+  padding: 20px 0  10px 0
 
 #key, #salt, #advanced-fields
   display: none
