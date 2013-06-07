@@ -17,6 +17,7 @@ Sometimes you need to send something to somebody and be sure that they're the on
 
 * The generated encryption password is currently being sent to the server (but isn't stored), so SSL is required for each install to ensure nobody reads your message. In the future I will remove this limitation.
 * Probably other things I haven't thought of / found yet. Always looking for help!
+* {The weaknesses of javascript and the browser in crypto}[http://log.nadim.cc/?p=33]
 
 == Getting Started
 
