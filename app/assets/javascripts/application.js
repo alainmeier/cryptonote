@@ -74,14 +74,14 @@ $(document).ready(function(){
   var encryptionPasswordField = $('#encryption-password');
   var password = randomString(32);
 
-  unencryptedField.keyup(function() {
-    var encryptedHash = jQuery.parseJSON(sjcl.encrypt(password, unencryptedField.val()));
+    $("input[name='commit']").on('click',function() {
+        var encryptedHash = jQuery.parseJSON(sjcl.encrypt(password, unencryptedField.val()));
 
-    encryptionKeyField.val(encryptedHash['iv']);
-    encryptionSaltField.val(encryptedHash['salt']);
-    encryptedField.val(encryptedHash['ct']);
-    encryptionPasswordField.val(password);
-  });
+        encryptionKeyField.val(encryptedHash['iv']);
+        encryptionSaltField.val(encryptedHash['salt']);
+        encryptedField.val(encryptedHash['ct']);
+        encryptionPasswordField.val(password);
+    });
 });
 
 $(document).ready(function(){
