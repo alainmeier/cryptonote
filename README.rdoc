@@ -30,7 +30,7 @@ Sometimes you need to send something to somebody and be sure that they're the on
 
 === Configuration
 
-Ensure that you have Postgres installed, preferrably through the {Heroku Postgres App}[http://postgresapp.com] as we use it in both production and development.
+Ensure that you have Postgres installed, preferably through the {Heroku Postgres App}[http://postgresapp.com] as we use it in both production and development.
 
 Then, open your terminal to the project folder and run:
 
