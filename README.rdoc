@@ -2,7 +2,7 @@
 
 http://i.imgur.com/AqwnnXG.png
 
-CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.org
+CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.it
 
 * All data is encrypted client side so that the server never sees what's on it.
 * Messages are deleted from the server once the recipient has viewed it.
@@ -23,8 +23,8 @@ Sometimes you need to send something to somebody and be sure that they're the on
 
 === System dependencies
 
-- Ruby 2.0.0 or higher
-- Rails 4.0.0 or higher
+- Ruby 2.1.1 or higher
+- Rails 4.1.0 or higher
 - Postgres 9.2.4 or greater
 - Heroku Toolbelt
 
