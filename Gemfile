@@ -1,38 +1,33 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 group :development do
-  gem 'annotate'
-
-  # Removes asset-related messages from server log
-  gem 'quiet_assets'
+  gem 'annotate', "~> 2.6.1"
 end
 
-group :production do
-  # Required for Heroku asset serving
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+# Required for Heroku asset serving
+gem 'rails_12factor', '~> 0.0.0', group: :production
 
 # For geocoding and reverse geocoding
-gem 'geocoder'
+gem 'geocoder', "~> 1.1.9"
 
 # Allows better management of ENV variables
-gem 'figaro'
+gem 'figaro', "~> 0.7.0"
 
-gem 'pg'
+gem 'pg', "~> 0.17.1"
 
-gem 'puma'
+gem 'puma', "~> 2.7.1"
 
-gem 'haml'
+gem 'haml', "~> 4.0.5"
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc2'
+gem 'sass-rails', '~> 4.0.0'
 
-gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
+# A CSS pre-processor toolkit
+gem "compass-rails", "~> 1.1.0"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -41,7 +36,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 3.1.0"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
