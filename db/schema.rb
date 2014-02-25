@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 20130607045426) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "messages", id: false, force: true do |t|
-    t.uuid     "id",             null: false
+  create_table "messages", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.text     "content"
     t.string   "location"
     t.string   "password"
