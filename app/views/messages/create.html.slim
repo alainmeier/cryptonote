@@ -1,0 +1,23 @@
+.create-header For email, IM and texting
+
+p(class='success-notice' )
+  | Your note was successfully created. Remember not to visit the below URL as it will delete it. It can be accessed from:
+
+.message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
+  | - 
+  | #{@built_url}
+
+br
+
+.create-header For Facebook, Twitter, etc.
+
+.warning-create
+  | Some websites automatically crawl links you send (thereby deleting your CryptoNote). To avoid this, copy this URL below instead and have your recipient remove the space inserted in the URL after /messages/. This is a temporary fix.
+
+.message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
+  | - 
+  | #{@built_url_crawl}
+
+br
+br
+= link_to '&laquo; Back to the homepage'.html_safe, root_path, class: 'btn btn-primary'

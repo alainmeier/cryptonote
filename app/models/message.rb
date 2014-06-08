@@ -17,14 +17,5 @@
 class Message < ActiveRecord::Base
   validates :content, presence: true
 
-  geocoded_by :location
-  after_validation :geocode, :check_geocode
-
   attr_accessor :gen_password, :pre_encryption
-
-  def check_geocode
-    if self.location != "" && self.latitude == nil
-      errors.add(:location, "couldn't be found. Please try something else.")
-    end
-  end
 end

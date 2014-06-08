@@ -1,0 +1,63 @@
+@import 'variables'
+
+*
+  @include box-sizing(border-box)
+
+.clearfix
+  +clearfix
+
+html
+  -webkit-font-smoothing: antialiased 
+  font-family: $font-stack 
+  height: 100% 
+  background-color: $background-color
+
+#container
+  margin: 50px auto
+
+#message-container
+  background-color: #fff
+  box-shadow: darken($background-color, 10%) 0 0 3px
+  min-height: 600px
+  width: 100%
+  padding: 50px
+
+/* -----------------------------------------
+ * BODY SKELETON
+ * ----------------------------------------- */
+
+.body-skeleton
+  @include outer-container
+  padding: 0 20px
+
+  .column-row
+    @include row
+
+  .columns-four
+    @include span-columns(4)
+
+  .columns-five
+    @include span-columns(5)
+
+  .columns-six
+    @include span-columns(6)
+
+  .columns-seven
+    @include span-columns(7)
+
+  .columns-eight
+    @include span-columns(8)
+
+  .columns-twelve
+    @include span-columns(12)
+
+#unencrypted-message
+  width: 100%
+  border: 0
+  outline: 0
+  font-size: 20px
+  font-family: $font-stack
+  color: darken(#8a9ba5, 20%)
+  -webkit-font-smoothing: antialiased 
+  resize: none
+  line-height: 1.5

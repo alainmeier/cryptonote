@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-  before_filter :check_location, :check_password
-
   def new
     @message = Message.new
   end
@@ -20,19 +18,7 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
-    @latitude = request.location.latitude
-    @longitude = request.location.longitude
-
-    if !@message.location.nil?
-       distance = Geocoder::Calculations.distance_between([@latitude,@longitude], [@message.latitude,@message.longitude])
-       if distance > 20
-        redirect_to root_path, notice: 'You are not in the right location.'
-      else
-        @message.delete
-      end
-    elsif @message.location.nil?
-      @message.delete
-    end
+    @message.delete
   end
 
   def destroy
@@ -42,18 +28,8 @@ class MessagesController < ApplicationController
 
   private
     def message_params
-      params.require(:message).permit(:content, 
-                                      :location, 
-                                      :password, 
-                                      :latitude, 
-                                      :longitude,
+      params.require(:message).permit(:content,
                                       :encryption_key,
                                       :salt)
-    end
-
-    def check_location
-    end
-
-    def check_password
     end
 end

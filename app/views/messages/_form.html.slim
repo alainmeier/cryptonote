@@ -1,0 +1,9 @@
+#message-container
+  = text_area :pre_encryption, :message, placeholder: "Write your note here...", autofocus: true, class: 'content-input', id: 'unencrypted-message'
+
+= form_for @message do |f|
+  = f.hidden_field :content
+  = f.hidden_field :gen_password
+  = f.hidden_field :encryption_key
+  = f.hidden_field :salt
+  = f.submit 'Create CryptoNote', class: 'btn btn-primary'

@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.autosize
 //= require sjcl
-//= require tooltip
 //= require_tree .
 
 function randomString(length) {
@@ -44,26 +43,6 @@ function select_all(el) {
 
 $(document).ready(function(){
   $('#unencrypted-message').autosize();
-
-  $('#advanced-fields-link').click(function() {
-    $('#advanced-fields').slideToggle();
-    return false;
-  });
-
-  $('#message_location').tooltip({
-    placement: "bottom",
-    trigger: "focus"
-  });
-
-  $('#message_password').tooltip({
-    placement: "bottom",
-    trigger: "focus"
-  });
-
-  $('.message-link').tooltip({
-    placement: "bottom",
-    trigger: "hover"
-  });
 });
 
 $(document).ready(function(){

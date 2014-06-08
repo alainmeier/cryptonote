@@ -1,0 +1,7 @@
+- if @message.errors.any?
+  #error_explanation
+    ul
+    - @message.errors.full_messages.each do |msg|
+      li msg
+
+= render 'form'
