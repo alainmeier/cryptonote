@@ -21,6 +21,13 @@ html
   min-height: 600px
   width: 100%
   padding: 50px
+  @include border-radius(3px)
+  font-size: 16px
+  font-family: $font-stack
+  color: darken(#8a9ba5, 20%)
+  -webkit-font-smoothing: antialiased 
+  resize: none
+  line-height: 1.5
 
 /* -----------------------------------------
  * BODY SKELETON
@@ -51,13 +58,98 @@ html
   .columns-twelve
     @include span-columns(12)
 
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+/* -----------------------------------------
+ * NEW NOTE
+ * ----------------------------------------- */
+
 #unencrypted-message
   width: 100%
   border: 0
   outline: 0
-  font-size: 20px
+  font-size: 16px
   font-family: $font-stack
   color: darken(#8a9ba5, 20%)
   -webkit-font-smoothing: antialiased 
   resize: none
   line-height: 1.5
+  height: 100%
+
+#encrypted-message-body
+  x-overflow: scroll
+
+#message-button-container
+  margin-top: 30px
+
+#container
+  font-family: $font-stack
+
+#hidden-fields
+  display: none
+
+/* -----------------------------------------
+ * BUTTONS
+ * ----------------------------------------- */
+
+.btn
+  display: inline-block
+  color: #fff
+  font-weight: bold
+  font-size: 16px
+  @include border-radius(50px)
+  @include background(linear-gradient(top, #788e9b, #6a7e8a))
+  border: 0
+  -webkit-font-smoothing: antialiased 
+  font-family: $font-stack
+  cursor: pointer
+  padding: 10px 25px
+  @include text-shadow(darken(#6a7e8a, 10%) 0 -1px 0)
+  @include box-shadow(rgba(255,255,255,0.8) 0 1px 0)
+  text-decoration: none
+  outline: 0
+
+/* -----------------------------------------
+ * WARNING MESSAGE
+ * ----------------------------------------- */
+
+#warning
+  width: 100%
+  font-size: 13px
+  text-align: center
+  color: darken($background-color, 30%)
+  padding-bottom: 30px
+  text-shadow: rgba(255,255,255,0.8) 0 1px 0
+
+#homepage-message
+  font-size: 13px
+  text-align: center
+  color: darken($background-color, 30%)
+  padding-top: 20px
+  text-shadow: rgba(255,255,255,0.8) 0 1px 0
+
+  a
+    color: darken($background-color, 40%)
+
+/* -----------------------------------------
+ * CREATION CONFIRMATION
+ * ----------------------------------------- */
+
+#message-success
+  .message-link
+    background-color: darken($background-color, 5%)
+    border: 1px solid darken($background-color, 10%)
+    padding: 10px
+    @include border-radius(3px)
+    margin-top: 20px
+    margin-bottom: 30px
+    line-height: 1.5
+
+  h1
+    font-size: 25px
+    color: darken($background-color, 40%)
+    margin-bottom: 20px
