@@ -86,6 +86,7 @@ $(document).ready(function(){
   // Show decrypted message
   var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
   decryptedMessage = escapeHtml(decryptedMessage);
+  decryptedMessage = decryptedMessage.replace(/\n/g, "<br/>");
   encryptedTextArea.html(decryptedMessage);
 });
 
