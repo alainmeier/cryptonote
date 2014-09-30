@@ -43,6 +43,10 @@ function select_all(el) {
 
 $(document).ready(function(){
   $('#unencrypted-message').autosize();
+
+  $('#message-container').on('click', function(){
+    $('#unencrypted-message').focus();
+  });
 });
 
 $(document).ready(function(){
