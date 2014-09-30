@@ -144,14 +144,28 @@ html
  * ----------------------------------------- */
 
 #message-success
+  p
+    color: darken($background-color, 60%)
+
+  #clippy
+    margin-bottom: 20px
+    margin-top: 5px
+
   .message-link
     background-color: darken($background-color, 5%)
     border: 1px solid darken($background-color, 10%)
     padding: 10px
-    @include border-radius(3px)
+    @include border-radius(2px)
     margin-top: 20px
-    margin-bottom: 30px
     line-height: 1.5
+    overflow: hidden
+    color: darken($background-color, 70%)
+    word-wrap: none
+    white-space: nowrap
+    font-size: 14px
+    cursor: pointer
+    @include box-shadow(rgba(255,255,255,0.2) 0 1px 1px inset)
+    height: 42px
 
   h1
     font-size: 25px

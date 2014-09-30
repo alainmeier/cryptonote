@@ -6,5 +6,8 @@
 
   .message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
     = @built_url
+    
+  #clippy
+      = clippy(@built_url, '#eaeff2')
 
   = link_to '&laquo; Write a new message'.html_safe, root_path, class: 'btn btn-primary'
