@@ -44,8 +44,15 @@ function select_all(el) {
 $(document).ready(function(){
   $('#unencrypted-message').autosize();
 
+  messageField = $('#unencrypted-message');
   $('#message-container').on('click', function(){
-    $('#unencrypted-message').focus();
+    messageField.focus();
+  });
+
+  messageField.keydown(function(e) {
+    if(e.keyCode == 13 && e.metaKey) {
+      $('#create-message').click();
+    }
   });
 });
 
