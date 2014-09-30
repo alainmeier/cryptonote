@@ -54,6 +54,10 @@ $(document).ready(function(){
       $('#create-message').click();
     }
   });
+
+  $('#create-message').on('click', function() {
+    $('#message-container').addClass('animated fadeOutUp');
+  });
 });
 
 $(document).ready(function(){
