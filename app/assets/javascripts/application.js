@@ -85,5 +85,12 @@ $(document).ready(function(){
 
   // Show decrypted message
   var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
+  decryptedMessage = escapeHtml(decryptedMessage);
   encryptedTextArea.html(decryptedMessage);
 });
+
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
