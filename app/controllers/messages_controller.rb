@@ -19,20 +19,16 @@ class MessagesController < ApplicationController
     @message.delete
   end
 
-  def destroy
-    @message = Message.find(params[:id])
-    @message.destroy
+  private
+  
+  def message_params
+    params.require(:message).permit(:content, :encryption_key, :salt)
   end
 
-  private
-    def message_params
-      params.require(:message).permit(:content, :encryption_key, :salt)
-    end
-
-    def build_url(password)
-      url = request.protocol
-      url += request.host_with_port
-      url += request.fullpath
-      url += '/' + @message.id + '?gen_password=' + @gen_password
-    end
+  def build_url(password)
+    url = request.protocol
+    url += request.host_with_port
+    url += request.fullpath
+    url += '/' + @message.id + '?gen_password=' + @gen_password
+  end
 end

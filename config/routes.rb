@@ -6,4 +6,9 @@ Cryptonote::Application.routes.draw do
   root 'messages#new'
 
   resources :messages, only: [:show, :create, :destroy]
+
+  # Route all errors to custom layout files
+  %w( 404 422 500 ).each do |code|
+    get code, to: "errors#show", code: code
+  end
 end
