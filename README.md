@@ -8,8 +8,7 @@ CryptoNote is a very simple open source web application that lets users encrypt 
 
 * All data is encrypted client side so that the server never sees what's on it.
 * Messages are deleted from the server once the recipient has viewed it.
-* Messages can be optionally geofenced so they can only be opened while located within the fence.
-* Messages can be password protected.
+* Bots like Facebook are blocked so that they do not invalidate messages.
 
 ## Motivation
 
@@ -18,8 +17,7 @@ Sometimes you need to send something to somebody and be sure that they're the on
 ## Known Weaknesses
 
 * The generated encryption password is currently being sent to the server (but isn't stored), so SSL is required for each install to ensure nobody reads your message. In the future I will remove this limitation. It also means the person hosting the site could potentially be decrypting your message on the server side.
-* Probably other things I haven't thought of / found yet. Always looking for help!
-* [The weaknesses of javascript and the browser in crypto](http://log.nadim.cc/?p=33) and [discussion surrounding that article}](https://news.ycombinator.com/item?id=5768837)
+* [The weaknesses of javascript and the browser in crypto](http://log.nadim.cc/?p=33) and [discussion surrounding that article](https://news.ycombinator.com/item?id=5768837)
 
 ## Getting Started
 
@@ -69,6 +67,9 @@ I'm always open to pull requests, and there's a lot more that could be done with
 * Time-based expiry. Make messages automatically die after x period of time.
 * Javascript submission so we can carry over the password variable client-side instead of sending it to the server.
 * The application.js file has some horrendously bad javascript that I may or may not rewrite soon depending on time. Don't hate the player, hate the time constraint. 
+* Allow Markdown in decrypted messages.
+* Allow code highlighting in decrypted messages.
+* An API endpoint for creating new CryptoNotes + javascript package to do the crypto easily.
 
 ## License
 
