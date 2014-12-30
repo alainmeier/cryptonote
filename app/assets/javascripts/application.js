@@ -64,10 +64,6 @@ $(document).ready(function(){
   $('body').keyup(function(e) {
     $('#create-message').attr("value", "Create CryptoNote");
   });
-
-  $('#create-message').on('click', function() {
-    $('#message-container').addClass('animated fadeOutUp');
-  });
 });
 
 $(document).ready(function(){

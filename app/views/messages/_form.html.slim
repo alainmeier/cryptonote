@@ -8,7 +8,7 @@
       = link_to "available on GitHub", "https://github.com/alainmeier/cryptonote"
       | .
   .pull-right
-    = form_for @message do |f|
+    = form_for Message.new do |f|
       = f.hidden_field :content, id: 'encrypted-message'
       = f.hidden_field :gen_password, id: 'encryption-password'
       = f.hidden_field :encryption_key, id: 'encryption-key'
