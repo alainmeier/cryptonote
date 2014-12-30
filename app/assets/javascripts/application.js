@@ -55,6 +55,16 @@ $(document).ready(function(){
     }
   });
 
+  $('body').keydown(function(e) {
+    if(e.metaKey) {
+      $('#create-message').attr("value", "Press Enter to create");
+    }
+  });
+
+  $('body').keyup(function(e) {
+    $('#create-message').attr("value", "Create CryptoNote");
+  });
+
   $('#create-message').on('click', function() {
     $('#message-container').addClass('animated fadeOutUp');
   });
