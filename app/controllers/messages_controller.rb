@@ -15,6 +15,12 @@ class MessagesController < ApplicationController
   end
 
   def show
+    # Block Facebook bot from invalidating message
+    if /facebookexternalhit/.match(request.headers["HTTP_USER_AGENT"])
+      redirect_to '/404'
+      return
+    end
+
     @message = Message.find_by(id: params[:id])
 
     if @message
