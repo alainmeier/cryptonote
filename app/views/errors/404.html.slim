@@ -1,11 +1,9 @@
-- title "Page Not Found"
-
 #error-page
-  h2
+  h1
     | We couldn't find the page you were looking for.
 
   p
-    | It's possible that the page you were looking for moved or you typed in an incorrect URL.
+    | It's possible that this used to be a message and it was already read by somebody or you followed the wrong link.
 
   p
-    = link_to "&lsaquo; To the homepage".html_safe, root_path
+    = link_to "&lsaquo; Write new message".html_safe, root_path, class: 'btn'
