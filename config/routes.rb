@@ -1,11 +1,12 @@
 Cryptonote::Application.routes.draw do
+  # Automatically removes and redirects any URL prepended with www.
   constraints subdomain: 'www' do
     get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
   end
 
   root 'messages#new'
 
-  resources :messages, only: [:show, :create, :destroy]
+  resources :messages, only: [:show, :create]
 
   # Route all errors to custom layout files
   %w( 404 422 500 ).each do |code|
