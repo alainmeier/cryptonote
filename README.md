@@ -19,7 +19,7 @@ Sometimes you need to send something to somebody and be sure that they're the on
 
 * The generated encryption password is currently being sent to the server (but isn't stored), so SSL is required for each install to ensure nobody reads your message. In the future I will remove this limitation. It also means the person hosting the site could potentially be decrypting your message on the server side.
 * Probably other things I haven't thought of / found yet. Always looking for help!
-* {The weaknesses of javascript and the browser in crypto}[http://log.nadim.cc/?p=33] and {discussion surrounding that article}[https://news.ycombinator.com/item?id=5768837]
+* [The weaknesses of javascript and the browser in crypto](http://log.nadim.cc/?p=33) and [discussion surrounding that article}](https://news.ycombinator.com/item?id=5768837)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ Sometimes you need to send something to somebody and be sure that they're the on
 
 ### Configuration
 
-Ensure that you have Postgres installed, preferably through the {Heroku Postgres App}[http://postgresapp.com] as we use it in both production and development.
+Ensure that you have Postgres installed, preferably through the [Heroku Postgres App](http://postgresapp.com) as we use it in both production and development.
 
 Then, open your terminal to the project folder and run:
 
@@ -76,4 +76,4 @@ CryptoNote is released under the terms of the MIT license. See LICENCE for more 
 
 ## Special Thanks
 
-For the client-side encryption, all of the heavy lifting is done by the {Stanford Javascript Crypto Library}[https://crypto.stanford.edu/sjcl/]. Part of the reason I make this project was to help spread the word about the simple, but extremely well made library that anybody can use. Thanks to the team who made it!
+For the client-side encryption, all of the heavy lifting is done by the [Stanford Javascript Crypto Library](https://crypto.stanford.edu/sjcl/). Part of the reason I make this project was to help spread the word about the simple, but extremely well made library that anybody can use. Thanks to the team who made it!
