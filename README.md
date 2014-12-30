@@ -1,6 +1,8 @@
-= CryptoNote
+# CryptoNote
 
-http://i.imgur.com/AqwnnXG.png
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/alainmeier/cryptonote)
+
+![CryptoNote in action](http://i.imgur.com/AqwnnXG.png)
 
 CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.me
 
@@ -9,63 +11,69 @@ CryptoNote is a very simple open source web application that lets users encrypt 
 * Messages can be optionally geofenced so they can only be opened while located within the fence.
 * Messages can be password protected.
 
-== Motivation
+## Motivation
 
 Sometimes you need to send something to somebody and be sure that they're the only person reading the message. So I decided to make a simple, open source, encrypted messaging system that anybody can pull and deploy to Heroku in minutes. Don't trust me? That's cool, install your own. Don't trust your web host? That's cool, they'll never be able to read your messages.
 
-== Known Weaknesses
+## Known Weaknesses
 
 * The generated encryption password is currently being sent to the server (but isn't stored), so SSL is required for each install to ensure nobody reads your message. In the future I will remove this limitation. It also means the person hosting the site could potentially be decrypting your message on the server side.
 * Probably other things I haven't thought of / found yet. Always looking for help!
 * {The weaknesses of javascript and the browser in crypto}[http://log.nadim.cc/?p=33] and {discussion surrounding that article}[https://news.ycombinator.com/item?id=5768837]
 
-== Getting Started
+## Getting Started
 
-=== System dependencies
+### System dependencies
 
-- Ruby 2.1.1 or higher
-- Rails 4.1.0 or higher
+- Ruby 2.2.0 or higher
+- Rails 4.1.8 or higher
 - Postgres 9.2.4 or greater
 - Heroku Toolbelt
 
-=== Configuration
+### Configuration
 
 Ensure that you have Postgres installed, preferably through the {Heroku Postgres App}[http://postgresapp.com] as we use it in both production and development.
 
 Then, open your terminal to the project folder and run:
 
-    rake db:setup
-    rake db:migrate
+```
+rake db:setup
+rake db:migrate
+```
 
-=== Deployment instructions
+### Deployment instructions
 
 Run the following commands to get started:
 
-    heroku create
-    git push heroku master
-    heroku run rake db:migrate
-    
+```
+heroku create
+git push heroku master
+heroku run rake db:migrate
+```
+
 And then run:
 
-    heroku open
+```
+heroku open
+```
     
 In order to open the application.
 
-== Contributing
+## Contributing
 
 I'm always open to pull requests, and there's a lot more that could be done with the site. In general, I will tend towards "track less", so I never want CryptoNote to have user accounts or anything like that. However, there are always cool things that can be done.
 
-=== Ideas for the future
+### Ideas for the future
 
 * Limit viewing by http referrer. For example, only people who clicked the link on Facebook or Twitter can view the message
 * Time-based expiry. Make messages automatically die after x period of time.
 * Javascript submission so we can carry over the password variable client-side instead of sending it to the server.
 * The application.js file has some horrendously bad javascript that I may or may not rewrite soon depending on time. Don't hate the player, hate the time constraint. 
 
-== License
+## License
 
 CryptoNote is released under the terms of the MIT license. See LICENCE for more information or see http://opensource.org/licenses/MIT.
 
-== Special Thanks
+## Special Thanks
 
 For the client-side encryption, all of the heavy lifting is done by the {Stanford Javascript Crypto Library}[https://crypto.stanford.edu/sjcl/]. Part of the reason I make this project was to help spread the word about the simple, but extremely well made library that anybody can use. Thanks to the team who made it!
