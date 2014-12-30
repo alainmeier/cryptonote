@@ -15,12 +15,18 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
-    @message.delete
+    @message = Message.find_by(id: params[:id])
+
+    if @message
+      @message.delete
+    else
+      redirect_to '/404'
+      return
+    end
   end
 
   private
-  
+
   def message_params
     params.require(:message).permit(:content, :encryption_key, :salt)
   end
