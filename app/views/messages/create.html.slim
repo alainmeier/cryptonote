@@ -4,10 +4,19 @@
   p.success-notice
     | Remember not to visit the below URL as it will delete it. It can be accessed from:
 
-  .message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
-    = @built_url
-    
-  #clippy
-      = clippy(@built_url, '#eaeff2')
+  .grid-row.clearfix
+    .columns-eight
+      #message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
+        = @built_url
 
-  = render 'form'
+    .columns-four
+      #clippy.btn-copy(data-clipboard-text="#{@built_url}")
+        | Copy to clipboard
+
+= render 'form'
+
+javascript:
+  var client = new ZeroClipboard($("#clippy"));
+  client.on( "aftercopy", function( event ) {
+    $('#clippy').text("Copied!");
+  });

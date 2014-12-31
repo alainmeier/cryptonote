@@ -18,7 +18,7 @@ gem 'figaro', "~> 1.0.0.rc1"
 
 gem 'pg', "~> 0.17.1"
 
-gem 'puma', '~> 2.8.2'
+gem 'puma', '~> 2.10.2'
 
 gem 'slim', '~> 2.0.2'
 
@@ -38,3 +38,5 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', "~> 3.1.0"
 
 gem 'compass-rails', '~> 1.1.7'
+
+gem 'zeroclipboard-rails', '~> 0.1.0'

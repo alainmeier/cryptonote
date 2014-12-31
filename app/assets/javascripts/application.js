@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.autosize
 //= require sjcl
+//= require zeroclipboard
 //= require_tree .
 
 function randomString(length) {
