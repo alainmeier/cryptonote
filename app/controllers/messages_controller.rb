@@ -17,6 +17,10 @@ class MessagesController < ApplicationController
   def show
     # Block Facebook bot from invalidating message
     if /facebookexternalhit/.match(request.headers["HTTP_USER_AGENT"])
+    # Fixes peculiarity with UUIDs in Postgres
+    begin
+      @message = Message.find_by(id: params[:id])
+    rescue ActiveRecord::StatementInvalid => e
       redirect_to '/404'
       return
     end
