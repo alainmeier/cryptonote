@@ -7,6 +7,9 @@ html
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png' 
     = render 'shared/analytics'
+    meta(http-equiv="Cache-Control" content="private, must-revalidate, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0")
+    meta(http-equiv="Pragma" content="no-cache")
+    meta(http-equiv="Expires" content="0")
   body
     #container.body-skeleton
       = yield
