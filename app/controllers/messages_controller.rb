@@ -15,8 +15,14 @@ class MessagesController < ApplicationController
   end
 
   def show
-    # Block Facebook bot from invalidating message
-    if /facebookexternalhit/.match(request.headers["HTTP_USER_AGENT"])
+    # Search list of blocked bots before invalidating message
+    BLOCKED_BOTS.each do |bot|
+      if regex_match?(request.headers["HTTP_USER_AGENT"], bot)
+        redirect_to '/404'
+        return
+      end
+    end
+
     # Fixes peculiarity with UUIDs in Postgres
     begin
       @message = Message.find_by(id: params[:id])
@@ -24,8 +30,6 @@ class MessagesController < ApplicationController
       redirect_to '/404'
       return
     end
-
-    @message = Message.find_by(id: params[:id])
 
     if @message
       @message.delete
@@ -36,6 +40,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+  def regex_match?(header, regex)
+    regex =~ header
+  end
 
   def message_params
     params.require(:message).permit(:content, :encryption_key, :salt)

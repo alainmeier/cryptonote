@@ -1,0 +1,1 @@
+BLOCKED_BOTS = [/facebookexternalhit/, /Slackbot-LinkExpanding/, /Twitterbot/]
