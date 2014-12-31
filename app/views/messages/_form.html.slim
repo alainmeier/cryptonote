@@ -13,4 +13,6 @@
       = f.hidden_field :gen_password, id: 'encryption-password'
       = f.hidden_field :encryption_key, id: 'encryption-key'
       = f.hidden_field :salt, id: 'encryption-salt'
-      = f.submit 'Create CryptoNote', class: 'btn', id: 'create-message'
+      = f.button type: 'submit', class: 'btn', id: 'create-message' do
+        .lock-sprite
+        | Create CryptoNote

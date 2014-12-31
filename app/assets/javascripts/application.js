@@ -55,16 +55,6 @@ $(document).ready(function(){
       $('#create-message').click();
     }
   });
-
-  $('body').keydown(function(e) {
-    if(e.metaKey) {
-      $('#create-message').attr("value", "Press Enter to create");
-    }
-  });
-
-  $('body').keyup(function(e) {
-    $('#create-message').attr("value", "Create CryptoNote");
-  });
 });
 
 $(document).ready(function(){

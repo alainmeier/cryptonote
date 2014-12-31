@@ -113,17 +113,29 @@ html
   color: #fff
   font-weight: bold
   font-size: 16px
-  @include border-radius(50px)
+  @include border-radius(6px)
   @include background(linear-gradient(top, #788e9b, #6a7e8a))
   border: 0
   -webkit-font-smoothing: antialiased 
   font-family: $font-stack
   cursor: pointer
-  padding: 10px 25px
-  @include text-shadow(darken(#6a7e8a, 10%) 0 -1px 0)
+  padding: 10px 20px
+  @include text-shadow(rgba(0,0,0,0.1) 0 -1px 0)
   @include box-shadow(rgba(255,255,255,0.8) 0 1px 0)
   text-decoration: none
   outline: 0
+  @include transition(0.1s linear opacity)
+
+  &:hover
+    @include opacity(0.95)
+    @include transition(0.1s linear opacity)
+
+.lock-sprite
+  width: 12px
+  height: 17px
+  background: image-url('lock.png') no-repeat
+  display: inline-block
+  margin-right: 15px
 
 /* -----------------------------------------
  * WARNING MESSAGE
