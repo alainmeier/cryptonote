@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607045426) do
+ActiveRecord::Schema.define(version: 20141231230423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20130607045426) do
     t.datetime "updated_at"
     t.string   "encryption_key"
     t.string   "salt"
+    t.string   "message_type",   default: "text"
+    t.boolean  "deleted",        default: false
   end
 
 end

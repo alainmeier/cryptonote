@@ -12,6 +12,7 @@
 #  updated_at     :datetime
 #  encryption_key :string(255)
 #  salt           :string(255)
+#  message_type   :string(255)      default("text")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

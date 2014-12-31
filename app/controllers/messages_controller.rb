@@ -25,14 +25,16 @@ class MessagesController < ApplicationController
 
     # Fixes peculiarity with UUIDs in Postgres
     begin
-      @message = Message.find_by(id: params[:id])
+      message_to_delete = Message.find_by(id: params[:id])
+      @message = message_to_delete.dup
     rescue ActiveRecord::StatementInvalid => e
       redirect_to '/404'
       return
     end
 
-    if @message
-      @message.delete
+    if @message && !@message.deleted
+      message_to_delete.erase_content
+      message_to_delete.save
     else
       redirect_to '/404'
       return
