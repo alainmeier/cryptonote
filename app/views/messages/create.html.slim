@@ -1,15 +1,13 @@
 #message-success
-  h1 Your note was successfully created.
-
   p.success-notice
-    | Remember not to visit the below URL as it will delete it. It can be accessed from:
+    | Here's the link to your note. Remember, opening the URL will delete the note!
 
-  .grid-row.clearfix
-    .columns-eight
+  .body-skeleton-no-p
+    .columns-nine
       #message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
         = @built_url
 
-    .columns-four
+    .columns-three
       #clippy.btn-copy(data-clipboard-text="#{@built_url}")
         | Copy to clipboard
 
