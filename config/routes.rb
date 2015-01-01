@@ -8,6 +8,8 @@ Cryptonote::Application.routes.draw do
 
   resources :messages, only: [:show, :create]
 
+  get '/statistics' => 'static_pages#stats', as: :stats
+
   # Route all errors to custom layout files
   %w( 404 422 500 ).each do |code|
     get code, to: "errors#show", code: code

@@ -1,0 +1,22 @@
+h1.standard-head Statistics
+
+table.clear-table
+  tr
+    th.category(colspan=5) Messages created
+  tr
+    th Today
+    th This week
+    th This month
+    th This year
+    th All time
+  tr
+    td
+      = @stats[:created_day]
+    td
+      = @stats[:created_week]
+    td
+      = @stats[:created_month]
+    td
+      = @stats[:created_year]
+    td
+      = @stats[:created_alltime]
