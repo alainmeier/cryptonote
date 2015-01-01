@@ -10,6 +10,8 @@ These are all of the feature changes or bug fixes that have occurred. Certain sm
 * Block Twitter and Slack bots
 * Added aggressive cache headers
 * Fixed bug with malformed UUIDs
+* New footer
+* Shortcut hints
 
 ## December 30, 2014
 
