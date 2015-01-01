@@ -40,3 +40,5 @@ gem 'jquery-rails', "~> 3.1.0"
 gem 'compass-rails', '~> 1.1.7'
 
 gem 'zeroclipboard-rails', '~> 0.1.0'
+
+gem 'markdownjs-rails', '~> 0.5.0'

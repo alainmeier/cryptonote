@@ -12,6 +12,9 @@ html
   height: 100% 
   background-color: $background-color
 
+strong
+  font-weight: bold !important
+
 #container
   margin: 50px auto
 
@@ -21,6 +24,7 @@ html
   min-height: 600px
   width: 100%
   padding: 50px
+  overflow-x: auto
   @include border-radius(3px)
   font-size: 16px
   font-family: $font-stack
@@ -29,9 +33,56 @@ html
   resize: none
   line-height: 1.5
 
+  h1, h2, h3, h4, h5, h6
+    margin-bottom: 15px
+
+  h1
+    font-size: 28px
+    padding-bottom: 10px
+    border-bottom: 1px solid darken(#f2f2f2, 5%)
+
+  h2
+    font-size: 23px
+
+  h3
+    font-size: 19px
+    font-weight: bold
+
+  h4
+    font-size: 17px
+    font-weight: bold
+
   pre
     white-space: normal
     word-wrap: break-word
+
+  p
+    padding-bottom: 15px
+
+  strong
+    font-weight: bold
+
+  em
+    font-style: italic
+
+  code
+    font-family: "Monaco", "consolas", monospace
+    background-color: #f2f2f2
+    @include border-radius(3px)
+    font-size: 12px
+    padding: 3px 6px
+    white-space: pre
+    display: inline-block
+
+  a
+    color: #4e97ca
+    text-decoration: none
+
+  hr
+    border: none
+    height: 1px
+    border-bottom: 1px solid darken(#f2f2f2, 5%)
+    margin-bottom: 15px
 
 /* -----------------------------------------
  * BODY SKELETON
@@ -211,3 +262,20 @@ html
     font-size: 23px
     color: darken($background-color, 40%)
     margin-bottom: 20px
+
+#settings-bar
+  padding-bottom: 20px
+  margin-top: -20px
+
+#markdown-toggle
+  font-size: 13px
+  text-align: right
+  float: right
+  color: darken($background-color, 30%)
+  text-shadow: rgba(255,255,255,0.8) 0 1px 0
+  // cursor: pointer
+  background: image-url('markdown-icon.png') no-repeat
+  padding-left: 25px
+
+  // &:hover
+  //   color: darken($background-color, 40%)

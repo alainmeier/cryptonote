@@ -10,6 +10,7 @@ These are all of the feature changes or bug fixes that have occurred. Certain sm
 * Block Twitter and Slack bots
 * Added aggressive cache headers
 * Fixed bug with malformed UUIDs
+* Added basic Markdown support
 
 ## December 30, 2014
 
