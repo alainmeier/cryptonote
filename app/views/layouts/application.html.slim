@@ -13,3 +13,15 @@ html
   body
     #container.body-skeleton
       = yield
+
+    footer#app-nav.clearfix
+      #app-description
+        = link_to root_path do
+          strong CryptoNote: 
+          | Send encrypted, single-view messages in seconds.
+
+      ul#app-links
+        li 
+          = link_to 'Source on GitHub', 'https://github.com/alainmeier/cryptonote', target: '_blank'
+        li
+          = link_to 'Made by @alain', 'https://twitter.com/alain', target: '_blank'

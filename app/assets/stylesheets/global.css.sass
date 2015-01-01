@@ -12,11 +12,16 @@ html
   height: 100% 
   background-color: $background-color
 
+body
+  position: relative
+  height: 100%
+
 strong
   font-weight: bold !important
 
 #container
   margin: 50px auto
+  margin-bottom: 100px
 
 #message-container
   background-color: #fff
@@ -181,6 +186,14 @@ strong
     @include opacity(0.95)
     @include transition(0.1s linear opacity)
 
+  .alt-text
+    color: #cedce4
+    font-size: 13px
+    float: right
+    font-weight: normal
+    padding-left: 13px
+    padding-top: 2px
+
 .lock-sprite
   width: 12px
   height: 17px
@@ -199,16 +212,6 @@ strong
   color: darken($background-color, 30%)
   padding-bottom: 30px
   text-shadow: rgba(255,255,255,0.8) 0 1px 0
-
-#homepage-message
-  font-size: 13px
-  text-align: center
-  color: darken($background-color, 30%)
-  padding-top: 15px
-  text-shadow: rgba(255,255,255,0.8) 0 1px 0
-
-  a
-    color: darken($background-color, 40%)
 
 /* -----------------------------------------
  * CREATION CONFIRMATION
@@ -263,6 +266,10 @@ strong
     color: darken($background-color, 40%)
     margin-bottom: 20px
 
+/* -----------------------------------------
+ * SETTINGS BAR
+ * ----------------------------------------- */
+
 #settings-bar
   padding-bottom: 20px
   margin-top: -20px
@@ -279,3 +286,44 @@ strong
 
   // &:hover
   //   color: darken($background-color, 40%)
+
+/* -----------------------------------------
+ * FOOTER
+ * ----------------------------------------- */
+
+#app-nav
+  border-top: 1px solid darken($background-color, 10%)
+  font-family: $font-stack
+  font-size: 12px
+  color: darken(#8ba7b8, 10%)
+  text-shadow: rgba(255,255,255,0.8) 0 1px 0
+  padding: 17px 20px 14px 20px
+  width: 100%
+  position: fixed
+  bottom: 0
+  margin-top: 30px
+  @include box-shadow(rgba(255,255,255,0.8) 0 1px 0 inset)
+  display: inline-block
+  @include background(linear-gradient(top, $background-color, darken($background-color, 5%)))
+
+  a
+    color: darken($background-color, 35%)
+    text-decoration: none
+    cursor: pointer
+
+    &:hover
+      color: darken($background-color, 50%)
+
+  #app-description
+    float: left
+
+  #app-links
+    float: right
+
+  li
+    display: inline-block
+    margin-right: 20px
+    font-weight: bold
+
+    &:last-child
+      margin-right: 0
