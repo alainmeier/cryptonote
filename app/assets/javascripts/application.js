@@ -98,12 +98,16 @@ $(document).ready(function(){
 
   // Show decrypted message
   var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
-  decryptedMessage = escapeHtml(decryptedMessage);
-  decryptedMessage = markdown.toHTML(decryptedMessage);
   // decryptedMessage = decryptedMessage.replace(/\n/g, '<br/>');
   // decryptedMessage = decryptedMessage.replace(/\s/g, '&nbsp;');
-  encryptedTextArea.html(decryptedMessage);
+  // Sanitizes initial user input
+  encryptedTextArea.text(decryptedMessage).html();
 
+  // Convert user input markdown to HTML
+  decryptedMessage = markdown.toHTML(encryptedTextArea.text());
+
+  // Apply new HTML to the text area
+  encryptedTextArea.html(decryptedMessage);
 });
 
 function escapeHtml(str) {
