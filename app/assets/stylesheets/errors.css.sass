@@ -1,12 +1,47 @@
 @import 'variables'
 
-#error-page
-  h1
-    font-size: 25px
-    color: darken($background-color, 40%)
-    margin-bottom: 20px
+@include global-reset
 
-  p
-    color: darken($background-color, 60%)
-    line-height: 1.53
-    padding-bottom: 20px
+*
+  @include box-sizing(border-box)
+
+.clearfix
+  +clearfix
+
+html
+  -webkit-font-smoothing: antialiased 
+  font-family: $font-stack 
+  height: 100% 
+  background-color: $background-color
+
+body
+  background-color: #6a7e8a
+  width: 100%
+  height: 100%
+  font-family: $font-stack
+  color: #fff
+  text-align: center
+
+#error-code
+  font-size: 200px
+  font-weight: 100
+  margin-bottom: 60px
+
+#container
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+
+a.btn
+  text-decoration: none
+  font-weight: bold
+  color: #fff
+  border: 2px solid #fff
+  padding: 10px 20px
+  @include border-radius(6px)
+  transition: 0.1s linear all
+
+  &:hover
+    color: #6a7e8a
+    background-color: #fff
+    transition: 0.1s linear all
