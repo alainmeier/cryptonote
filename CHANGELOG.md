@@ -2,6 +2,10 @@
 
 These are all of the feature changes or bug fixes that have occurred. Certain small changes will be left out like minor CSS updates.
 
+## January 3, 2015
+
+* Upgrade to Rails 4.2.0
+
 ## December 31, 2014
 
 * Began the changelog!
