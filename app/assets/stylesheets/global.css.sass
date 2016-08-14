@@ -1,15 +1,15 @@
 @import 'variables'
 
 *
-  @include box-sizing(border-box)
+  box-sizing: border-box
 
 .clearfix
   +clearfix
 
 html
-  -webkit-font-smoothing: antialiased 
-  font-family: $font-stack 
-  height: 100% 
+  -webkit-font-smoothing: antialiased
+  font-family: $font-stack
+  height: 100%
   background-color: $background-color
 
 strong
@@ -23,7 +23,7 @@ strong
   width: 100%
   padding: 10px
   color: darken($background-color, 40%)
-  @include text-shadow(rgba(255,255,255,0.8) 0 1px 0)
+  text-shadow: rgba(255,255,255,0.8) 0 1px 0
 
   .category
     font-size: 12px
@@ -42,7 +42,7 @@ h1
     font-size: 25px
     color: darken($background-color, 40%)
     margin-bottom: 20px
-    @include text-shadow(rgba(255,255,255,0.8) 0 1px 0)
+    text-shadow: rgba(255,255,255,0.8) 0 1px 0
 
 #message-container
   background-color: #fff
@@ -51,11 +51,11 @@ h1
   width: 100%
   padding: 50px
   overflow-x: auto
-  @include border-radius(3px)
+  border-radius: 3px
   font-size: 16px
   font-family: $font-stack
   color: darken(#8a9ba5, 20%)
-  -webkit-font-smoothing: antialiased 
+  -webkit-font-smoothing: antialiased
   resize: none
   line-height: 1.5
 
@@ -108,7 +108,7 @@ h1
   code
     font-family: "Monaco", "consolas", monospace
     background-color: #f2f2f2
-    @include border-radius(3px)
+    border-radius: 3px
     font-size: 12px
     padding: 3px 6px
     white-space: pre
@@ -178,7 +178,7 @@ h1
   font-size: 16px
   font-family: $font-stack
   color: darken(#8a9ba5, 20%)
-  -webkit-font-smoothing: antialiased 
+  -webkit-font-smoothing: antialiased
   resize: none
   line-height: 1.5
   height: 100%
@@ -204,22 +204,22 @@ h1
   color: #fff
   font-weight: bold
   font-size: 16px
-  @include border-radius(6px)
-  @include background(linear-gradient(top, #788e9b, #6a7e8a))
+  border-radius: 6px
+  @include background-image(linear-gradient(top, #788e9b, #6a7e8a))
   border: 0
-  -webkit-font-smoothing: antialiased 
+  -webkit-font-smoothing: antialiased
   font-family: $font-stack
   cursor: pointer
   padding: 10px 20px
-  @include text-shadow(rgba(0,0,0,0.1) 0 -1px 0)
-  @include box-shadow(rgba(255,255,255,0.8) 0 1px 0)
+  text-shadow: rgba(0,0,0,0.1) 0 -1px 0
+  box-shadow: rgba(255,255,255,0.8) 0 1px 0
   text-decoration: none
   outline: 0
-  @include transition(0.1s linear opacity)
+  transition: 0.1s linear opacity
 
   &:hover
-    @include opacity(0.95)
-    @include transition(0.1s linear opacity)
+    opacity: 0.95
+    transition: 0.1s linear opacity
 
   .alt-text
     color: #cedce4
@@ -258,29 +258,29 @@ h1
 
   p
     font-size: 14px
-    @include text-shadow(rgba(255,255,255,1) 0 1px 0)
+    text-shadow: rgba(255,255,255,1) 0 1px 0
 
   #clippy
     margin-top: 20px
-    @include border-radius(3px)
-    @include background(linear-gradient(top, $background-color, darken($background-color, 3%)))
+    border-radius: 3px
+    @include background-image(linear-gradient(top, $background-color, darken($background-color, 3%)))
     padding: 12px
     text-align: center
-    @include text-shadow(rgba(255,255,255,1) 0 1px 0)
+    text-shadow: rgba(255,255,255,1) 0 1px 0
     width: 100%
     cursor: pointer
     border: 1px solid darken($background-color, 15%)
-    @include box-shadow(rgba(255,255,255,0.9) 0 1px 0)
+    box-shadow: rgba(255,255,255,0.9) 0 1px 0
     font-weight: bold
     font-size: 14px
 
   #message-link
     background-color: darken($background-color, 3%)
     border: 1px solid darken($background-color, 15%)
-    @include text-shadow(rgba(255,255,255,1) 0 1px 0)
+    text-shadow: rgba(255,255,255,1) 0 1px 0
     padding: 10px 18px
     font-family: "Monaco", "consolas", monospace
-    @include border-radius(3px)
+    border-radius: 3px
     margin-top: 20px
     line-height: 1.5
     overflow: hidden
@@ -288,13 +288,13 @@ h1
     white-space: nowrap
     font-size: 12px
     cursor: pointer
-    @include box-shadow(rgba(0,0,0,0.02) 0 1px 0 inset, rgba(255,255,255,0.9) 0 1px 0)
-    @include transition(0.1s linear all)
+    box-shadow: rgba(0,0,0,0.02) 0 1px 0 inset, rgba(255,255,255,0.9) 0 1px 0
+    transition: 0.1s linear all
 
     &:hover
       background-color: darken($background-color, 5%)
       border: 1px solid darken($background-color, 12%)
-      @include transition(0.1s linear all)
+      transition: 0.1s linear all
 
   h1
     font-size: 23px
@@ -337,9 +337,9 @@ h1
   position: fixed
   bottom: 0
   margin-top: 30px
-  @include box-shadow(rgba(255,255,255,0.8) 0 1px 0 inset)
+  box-shadow: rgba(255,255,255,0.8) 0 1px 0 inset
   display: inline-block
-  @include background(linear-gradient(top, $background-color, darken($background-color, 5%)))
+  @include background-image(linear-gradient(top, $background-color, darken($background-color, 5%)))
 
   a
     color: darken($background-color, 35%)
