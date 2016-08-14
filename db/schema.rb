@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -17,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141231230423) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "messages", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+  create_table "messages", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.text     "content"
     t.string   "location"
     t.string   "password"
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 20141231230423) do
     t.datetime "updated_at"
     t.string   "encryption_key"
     t.string   "salt"
-    t.string   "message_type",   default: "text"
     t.boolean  "deleted",        default: false
   end
 
