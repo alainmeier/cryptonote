@@ -1,4 +1,10 @@
 class MessagesController < ApplicationController
+  BLOCKED_BOTS = [
+    /facebookexternalhit/,
+    /Slackbot-LinkExpanding/,
+    /Twitterbot/
+  ].freeze
+
   def new
     @message = Message.new
   end
