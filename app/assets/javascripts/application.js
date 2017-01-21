@@ -77,7 +77,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var encryptedTextArea = $('#encrypted-message-body pre');
+  var encryptedTextArea = $('#encrypted-message-body p');
   var encryptedText = encryptedTextArea.text();
   var encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
   var encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
