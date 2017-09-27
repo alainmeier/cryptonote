@@ -6,7 +6,6 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
     = favicon_link_tag 'favicon.png' 
-    = render 'shared/analytics'
     meta(http-equiv="Cache-Control" content="private, must-revalidate, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0")
     meta(http-equiv="Pragma" content="no-cache")
     meta(http-equiv="Expires" content="0")
@@ -24,6 +23,6 @@ html
         li 
           = link_to 'Statistics', :stats
         li 
-          = link_to 'Source on GitHub', 'https://github.com/alainmeier/cryptonote', target: '_blank'
+          = link_to 'Source on GitHub', 'https://github.com/robison/cryptonote', target: '_blank'
         li
           = link_to 'Made by @alain', 'https://twitter.com/alain', target: '_blank'
