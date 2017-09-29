@@ -76,37 +76,40 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var encryptedTextArea = $('#encrypted-message-body pre');
-  var encryptedText = encryptedTextArea.text();
-  var encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  var encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  var password = window.location.hash.substring(1);
+  if ($('#encrypted-message-body pre').length > 0)
+  {
+    var encryptedTextArea = $('#encrypted-message-body pre');
+    var encryptedText = encryptedTextArea.text();
+    var encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+    var encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
+    var password = window.location.hash.substring(1);
 
-  encryptedRebuilt = JSON.stringify({
-    'iv' : encryptionKey,
-    'v' : "1",
-    'iter' : 1000,
-    'ks' : 128,
-    'ts' : 64,
-    'mode' : "ccm",
-    'adata' : "",
-    'cipher' : "aes",
-    'salt' : encryptionSalt,
-    'ct' : encryptedText
-  });
+    encryptedRebuilt = JSON.stringify({
+      'iv' : encryptionKey,
+      'v' : "1",
+      'iter' : 1000,
+      'ks' : 128,
+      'ts' : 64,
+      'mode' : "ccm",
+      'adata' : "",
+      'cipher' : "aes",
+      'salt' : encryptionSalt,
+      'ct' : encryptedText
+    });
 
-  // Show decrypted message
-  var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
-  // decryptedMessage = decryptedMessage.replace(/\n/g, '<br/>');
-  // decryptedMessage = decryptedMessage.replace(/\s/g, '&nbsp;');
-  // Sanitizes initial user input
-  encryptedTextArea.text(decryptedMessage).html();
+    // Show decrypted message
+    var decryptedMessage = sjcl.decrypt(password, encryptedRebuilt);
+    // decryptedMessage = decryptedMessage.replace(/\n/g, '<br/>');
+    // decryptedMessage = decryptedMessage.replace(/\s/g, '&nbsp;');
+    // Sanitizes initial user input
+    encryptedTextArea.text(decryptedMessage).html();
 
-  // Convert user input markdown to HTML
-  decryptedMessage = markdown.toHTML(encryptedTextArea.text());
+    // Convert user input markdown to HTML
+    decryptedMessage = markdown.toHTML(encryptedTextArea.text());
 
-  // Apply new HTML to the text area
-  encryptedTextArea.html(decryptedMessage);
+    // Apply new HTML to the text area
+    encryptedTextArea.html(decryptedMessage);
+  };
 });
 
 function escapeHtml(str) {
