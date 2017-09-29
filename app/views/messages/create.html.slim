@@ -8,13 +8,16 @@
         = @built_url
 
     .columns-three
-      #clippy.btn-copy(data-clipboard-text="#{@built_url}")
+      #clippy.btn-copy(data-clipboard-action="copy" data-clipboard-text="#{@built_url}")
         | Copy to clipboard
 
 = render 'form'
 
 javascript:
-  var client = new ZeroClipboard($("#clippy"));
-  client.on( "aftercopy", function( event ) {
-    $('#clippy').text("Copied!");
+  var client = new Clipboard(document.getElementById('clippy'));
+  client.on('success', function(e) {
+    $("#clippy").text("Copied!");
+    setTimeout(function() {
+      $("#clippy").text("Copy to clipboard")
+    }, 1500);
   });
