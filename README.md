@@ -1,8 +1,6 @@
 # CryptoNote
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/alainmeier/cryptonote)
-
-[![CryptoNote in action](https://dl.dropboxusercontent.com/u/640957/GitHub/cryptonote.png)](https://cryptonote.me)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/robison/cryptonote)
 
 CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.me
 
