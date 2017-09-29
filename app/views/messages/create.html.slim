@@ -4,16 +4,20 @@
 
   .body-skeleton-no-p
     .columns-nine
-      #message-link(onclick= 'select_all(this)' data-toggle= 'tooltip' title='Click anywhere to highlight the URL')
+      #message-link(onclick='select_all(this)' data-toggle='tooltip' title='Click anywhere to highlight the URL')
         = @built_url
 
     .columns-three
-      #clippy.btn-copy(data-clipboard-action="copy" data-clipboard-text="#{@built_url}")
+      #clippy.btn-copy(data-clipboard-action="copy")
         | Copy to clipboard
 
 = render 'form'
 
 javascript:
+  encryptionPassword = sessionStorage.getItem('cryptonote-encryption-password');
+  sessionStorage.removeItem('cryptonote-encryption-password');
+  $("#message-link").contents().first().replaceWith($("#message-link").contents().first().text() + "#" + encryptionPassword);
+  $('#clippy').attr('data-clipboard-text', $("#message-link").text());
   var client = new Clipboard(document.getElementById('clippy'));
   client.on('success', function(e) {
     $("#clippy").text("Copied!");

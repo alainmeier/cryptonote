@@ -1,6 +1,6 @@
 #settings-bar.clearfix
   #markdown-toggle
-    | Markdown 
+    | Markdown
     strong enabled
 
 #message-container
@@ -10,7 +10,6 @@
   .pull-right
     = form_for Message.new do |f|
       = f.hidden_field :content, id: 'encrypted-message'
-      = f.hidden_field :gen_password, id: 'encryption-password'
       = f.hidden_field :encryption_key, id: 'encryption-key'
       = f.hidden_field :salt, id: 'encryption-salt'
       = f.button type: 'submit', class: 'btn', id: 'create-message' do
