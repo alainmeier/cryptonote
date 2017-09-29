@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.autosize
 //= require sjcl
-//= require zeroclipboard
+//= require clipboard
 //= require markdown
 //= require_tree .
 
@@ -63,7 +63,6 @@ $(document).ready(function(){
   var encryptedField = $('#encrypted-message');
   var encryptionKeyField = $('#encryption-key');
   var encryptionSaltField = $('#encryption-salt');
-  var encryptionPasswordField = $('#encryption-password');
   var password = randomString(32);
 
   unencryptedField.keyup(function() {
@@ -72,7 +71,7 @@ $(document).ready(function(){
     encryptionKeyField.val(encryptedHash['iv']);
     encryptionSaltField.val(encryptedHash['salt']);
     encryptedField.val(encryptedHash['ct']);
-    encryptionPasswordField.val(password);
+    sessionStorage.setItem('cryptonote-encryption-password', password);
   });
 });
 
@@ -81,7 +80,7 @@ $(document).ready(function(){
   var encryptedText = encryptedTextArea.text();
   var encryptionKey = $('#key').text().replace(/(\r\n|\n|\r|\s)/gm,"");
   var encryptionSalt = $('#salt').text().replace(/(\r\n|\n|\r|\s)/gm,"");
-  var password = getURLParameter("gen_password");
+  var password = window.location.hash.substring(1);
 
   encryptedRebuilt = JSON.stringify({
     'iv' : encryptionKey,
