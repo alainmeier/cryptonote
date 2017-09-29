@@ -38,6 +38,6 @@ gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 
-gem 'zeroclipboard-rails', '~> 0.1.2'
+gem 'clipboard-rails', '~> 1.7.1'
 
 gem 'markdownjs-rails', '~> 1.0', '>= 1.0.2'
