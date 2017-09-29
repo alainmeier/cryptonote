@@ -1,6 +1,6 @@
 {
   "name": "CryptoNote",
   "description": "Send and receive single-view, encrypted messages",
-  "repository": "https://github.com/alainmeier/cryptonote",
+  "repository": "https://github.com/robison/cryptonote",
   "keywords": ["messaging", "messages", "encrypted"]
 }
