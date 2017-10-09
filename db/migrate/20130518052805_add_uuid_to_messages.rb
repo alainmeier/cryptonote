@@ -1,6 +1,6 @@
-class AddUuidToMessages < ActiveRecord::Migration
+class AddUuidToMessages < ActiveRecord::Migration[4.2]
   enable_extension 'uuid-ossp'
-  
+
   def change
     drop_table :messages
 
