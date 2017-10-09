@@ -20,8 +20,10 @@ class Message < ActiveRecord::Base
 
   attr_accessor :gen_password, :pre_encryption
 
+  after_initialize :generate_uuid
+
   def erase_content
-    to_delete = %w(latitude longitude location 
+    to_delete = %w(latitude longitude location
                    password salt encryption_key)
 
     to_delete.each do |field|
@@ -32,4 +34,10 @@ class Message < ActiveRecord::Base
     self.deleted = true
     self
   end
+
+  protected
+  def generate_uuid
+    self.id ||= SecureRandom.uuid
+  end
+
 end
