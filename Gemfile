@@ -8,11 +8,6 @@ group :development do
   gem 'annotate', '~> 2.6.3'
 end
 
-group :production do
-  # Required for Heroku asset serving
-  gem 'rails_12factor', '~> 0.0.3'
-end
-
 # Allows better management of ENV variables
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
@@ -28,9 +23,6 @@ gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # A CSS pre-processor toolkit
 gem 'bourbon', '~> 4.2', '>= 4.2.7'
 gem 'neat', '~> 1.8'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.0', '>= 3.0.1'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
