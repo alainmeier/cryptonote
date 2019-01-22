@@ -1,7 +1,5 @@
 # CryptoNote
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/alainmeier/cryptonote)
-
 [![CryptoNote in action](https://dl.dropboxusercontent.com/u/640957/GitHub/cryptonote.png)](https://cryptonote.me)
 
 CryptoNote is a very simple open source web application that lets users encrypt and share messages. If you'd like to see an example of the site running, go to https://cryptonote.me
@@ -26,7 +24,6 @@ Sometimes you need to send something to somebody and be sure that they're the on
 - Ruby 2.2.0 or higher
 - Rails 4.1.8 or higher
 - Postgres 9.2.4 or greater
-- Heroku Toolbelt
 
 ### Configuration
 
@@ -38,28 +35,6 @@ Then, open your terminal to the project folder and run:
 rake db:setup
 rake db:migrate
 ```
-
-### Deployment instructions
-
-Run the following commands to get started:
-
-```
-heroku create
-git push heroku master
-heroku run rake db:migrate
-```
-
-And then run:
-
-```
-heroku open
-```
-    
-In order to open the application.
-
-## Contributing
-
-I'm always open to pull requests, and there's a lot more that could be done with the site. In general, I will tend towards "track less", so I never want CryptoNote to have user accounts or anything like that. However, there are always cool things that can be done.
 
 ### Ideas for the future
 
