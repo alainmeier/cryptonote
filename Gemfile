@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7.1', '>= 5.0.0.1'
+gem 'rails', '~> 5.0.7.2', '>= 5.0.0.1'
 
 group :development do
   gem 'annotate', '~> 2.6.3'
