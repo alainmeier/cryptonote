@@ -3,7 +3,8 @@ class MessagesController < ApplicationController
     /facebookexternalhit/,
     /Slackbot-LinkExpanding/,
     /Twitterbot/,
-    /WhatsApp/
+    /WhatsApp/,
+    /Discord/
   ].freeze
 
   def new
