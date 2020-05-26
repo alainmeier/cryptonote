@@ -5,7 +5,7 @@ ruby '2.6.6'
 gem 'rails', '~> 5.2', '>= 5.2'
 
 group :development do
-  gem 'annotate', '~> 2.6.3'
+  gem 'annotate', '~> 3.1.1'
 end
 
 group :production do
