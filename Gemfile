@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3', '>= 5.2.3'
+gem 'rails', '~> 5.2', '>= 5.2'
 
 group :development do
   gem 'annotate', '~> 2.6.3'
